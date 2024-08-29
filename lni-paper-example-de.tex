@@ -4,26 +4,19 @@
 \documentclass[biblatex]{lni}
 \addbibresource{lni-paper-example-de.bib}
 
-%% Schöne Tabellen mittels \toprule, \midrule, \bottomrule
-\usepackage{booktabs}
 
-%% Zu Demonstrationszwecken
-\usepackage[]{blindtext}
+\usepackage{booktabs} % Schöne Tabellen mittels \toprule, \midrule, \bottomrule
+\usepackage[]{blindtext} % Zu Demonstrationszwecken
 \usepackage{fancyhdr}
 \usepackage{acronym}
 
+%% Sietenzahlen
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
 \begin{document}
-%%% Mehrere Autoren werden durch \and voneinander getrennt.
-%%% Die Fußnote enthält die Adresse sowie eine E-Mail-Adresse.
-%%% Das optionale Argument (sofern angegeben) wird für die Kopfzeile verwendet.
-\title[Ein Kurztitel]{Ein sehr langer Titel über mehrere Zeilen mit sehr vielen Worten und noch mehr Buchstaben}
-%%%\subtitle{Untertitel / Subtitle} % falls benötigt
-%%%\maketitle
 
 \begin{titlepage}
   \centering
