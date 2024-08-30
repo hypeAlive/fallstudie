@@ -68,6 +68,9 @@
   \acro{JS}{JavaScript}
   \acro{SPA}{Single Page Application}
   \acro{TS}{TypeScript}
+  \acro{CLI}{Command Line Interface}
+  \acro{DOM}{Document Object Model}
+  \acro{JSX}{JavaScript XML}
 \end{acronym}
 \newpage
 
@@ -250,12 +253,43 @@ Der Übergang von AngularJS zu Angular erfolgte jedoch schneller als der Wechsel
 Seit 2023 ist ein Anstieg der Anzahl an Fragen zu Angular zu beobachten,
 was auf ein wieder wachsendes Interesse an diesem Framework hindeutet.
 
+Angular wurde von Google entwickelt und basiert auf \ac{TS}. \cite{NG}
+Dabei ist es ein muss, TypeScript zu verwenden, da Angular kein JavaScript unterstützt.
+Meist werden auch \ac{SPA}s mit Angular entwickelt werden, es ist jedoch auch möglich, mehrseitige Anwendungen zu erstellen.
+Eine besonderheit stellt das \ac{CLI} dar, das es ermöglicht, schnell und einfach ein neues Projekt zu erstellen und zu verwalten.
+
+Ein großer Vorteil von Angular ist, dass es sehr Zukunftssicher ist. \cite{BStack}
+Dies kommt dadurch Zustande, da Google hinter dem Framework steht und es ständig weiterentwickelt.
+Auch die Dokumentation ist sehr umfangreich und gut strukturiert, was die Einarbeitung erleichtert. \cite{NG}
+Es eignet sich perfekt für große Projekt, da die Projektstruktur konsistenz und lesbarkeit fördert
+
+Ein Nachteil ist jedoch, dass Angular sehr komplex ist und eine lange Einarbeitungszeit benötigt. \cite{BStack}
+Dadurch ist es weniger für Anfänger geeignet und benötigt mehr Vorkenntnisse.
+Auch die Ladezeit einer Seite ist länger, da Angular sehr groß ist und viele Funktionen mitbringt.
+Bei großen WebApps spielt das weniger eine Rolle, aber bei kleinen WebApps ist das ein großer Nachteil.
 
 \subsubsection{React}
 
 Wie in \Cref{fig:fetrends} zu sehen ist, hat sich React seit seiner Einführung als besonders beliebt erwiesen.
 Die stetig wachsende Anzahl der Fragen deutet auf eine wachsende Nutzerbasis hin.
 Der Höhepunkt der Beliebtheit von React war 2022, seitdem fällt die Anzahl der Fragen.
+
+React wurde 2013 von Facebook entwickelt und gehört seither zu den beliebtesten Frontend-Frameworks. \cite{BStack}
+Wie Vue und Angular ist auch React für \ac{SPA}s geeignet und verwendet ein Baustein System, in dem Komponenten wiederverwendet werden können.
+Ahnlich wie Vue3 kann React auch mit \ac{TS} verwendet werden.\cite{RCT}
+
+Ein Vorteil von React ist die relativ einfache Lernkurve. \cite{BStack}
+Zudem profitieren Entwickler von der großen Community und den zahlreichen Erweiterungen,
+die viele Funktionen bereits vorgefertigt anbieten,
+sodass sie nicht von Grund auf neu programmiert werden müssen.
+Damit einher geht auch das React Ökosystem, zudem auch React-Native gehört und es ermöglicht,
+auch mobile Apps zu entwickeln und somit den Code zu teilen. \cite{RCTN}
+
+Mit dem Vorteil der Größe folgt jedoch auch ein Nachteil. \cite{BStack}
+Durch die Größe und Beliebtheit von React ist das Tempo der Weiterentwicklung sehr hoch,
+was Entwickler zwingt, sich ständig mit neuen Konzepten auseinanderzusetzen.
+Zudem verwendet React \ac{JSX}, ein spezielles Format, um \ac{HTML} in JavaScript zu schreiben. \cite{JSX}
+Für Anfänger kann \ac{JSX} ungewohnt sein und eine gewisse Einarbeitungszeit erfordern.
 
 \subsection{Backend-Technologien im Vergleich: Express, Springboot und Django}
 \subsection{Wie arbeiten Backend und Frontend zusammen?}
