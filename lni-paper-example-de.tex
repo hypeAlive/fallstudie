@@ -9,6 +9,7 @@
 \usepackage[]{blindtext} % Zu Demonstrationszwecken
 \usepackage{fancyhdr}
 \usepackage{acronym}
+\usepackage{hyperref}
 
 %% Sietenzahlen
 \pagestyle{fancy}
@@ -71,6 +72,9 @@
   \acro{CLI}{Command Line Interface}
   \acro{DOM}{Document Object Model}
   \acro{JSX}{JavaScript XML}
+  \acro{API}{Application Programming Interface}
+  \acro{REST}{Representational State Transfer}
+  \acro{JSON}{JavaScript Object Notation}
 \end{acronym}
 \newpage
 
@@ -122,6 +126,7 @@ moderne Technologien aufgezeigt und verglichen.
 Zusätzlich wird die Zusammenarbeit der wichtigsten Komponenten einer WebApp aufgezeigt.
 
 \subsection{Überblick über moderne Webtechnologien}
+\label{sec:moderne-webtechnologien}
 
 Um eine WebApp oder Website zu verstehen oder entwickeln zu können, ist es wichtig, die zugrunde liegende Struktur zu kennen.
 Eine wesentliche Unterscheidung ist dabei die zwischen Frontend und Backend.
@@ -305,8 +310,106 @@ Für Anfänger kann \ac{JSX} ungewohnt sein und eine gewisse Einarbeitungszeit e
 \subsection{Konzeptentwicklung zur Bewältigung der Herausforderungen}
 
 \section{Test-Implementierung}
+
+Um das Verständnis zu vertiefen und die Bewertung der Technologien im Bezug auf die GLS-Quiz-App zu erleichtern,
+wird in diesem Abschnitt ein Demo Projekt vorgestellt.
+Der Fokus liegt zunächst auf einer allgemeinen Einführung,
+gefolgt von einer detaillierten technischen Umsetzung.
+Abschließend werden die gewonnenen Erkenntnisse aus der Implementierung dargelegt.
+
+Das Hauptziel besteht darin,
+aus allen Frontend- und Backend-Technologien die bestmögliche Kombination für die finale Lösung zu ermitteln.
+Dazu wird ein Prototyp entwickelt, der mit allen bereits vorgestellten Frontend- und Backend-Technologien realisiert wird,
+sowohl auf der Backend-Seite (Spring Boot, Express, Django) als auch auf der Frontend-Seite (Vue, Angular, React).
+
 \subsection{Das Demo Projekt}
+
+Das Demo-Projekt ist eine simple Fragen-App und simuliert damit auf einer sehr einfachen Ebene die GLS-Quiz-App.
+Die App ist in zwei Hauptteile unterteilt: Frontend und Backend, wie in dem Abschnitt \hyperref[sec:moderne-webtechnologien]{\textit{Überblick über moderne Webtechnologien}} beschrieben.
+
+Die Fragen-App stellt dem Nutzer nacheinander verschiedene Fragen,
+die jeweils mehrere Antwortmöglichkeiten bieten \textit{(a, b, c)}.
+Jede Frage hat genau eine richtige Antwort.
+Der Nutzer kann eine Antwort auswählen und muss diese anschließend bestätigen.
+Nach der Bestätigung erhält der Nutzer eine Rückmeldung,
+ob seine Antwort richtig oder falsch war.
+Es ist sicherzustellen, dass der Nutzer nicht durch Einsicht in den Quelltext der App die korrekten Antworten herausfinden kann.
+
+Das Frontend ist ausschließlich für die visuelle Darstellung der App zuständig.
+Es zeigt die Fragen, die Antwortmöglichkeiten und das Ergebnis der Beantwortung an.
+
+Das Backend fungiert als \ac{REST}-\ac{API} und ist verantwortlich für die Bereitstellung der Fragen und die Überprüfung der Antworten.
+Das Thema Datenbank ist zu vernachlässigen.
+Stattdessen soll das Backend auf eine einfache Methode zurückgreifen, wie zum Beispiel die Verwendung einer einzelnen Datei.
+
 \subsection{Umsetzung}
+
+- gesamtes Projekt unter https://github.com/hypeAlive/fallstudie-impl.git
+
+\subsubsection{Frontend}
+
+- Läuft bei allen auf port 2400
+
+\subsubsection{Backend}
+
+- Läuft bei allen auf port 8080
+- sendet und empfängt JSON
+- Simulierte Datenbank in Form von JSON Datei, die von allen Backends geteilt wird
+    - läd bei start einmal alle Fragen in das Backend, also wird nicht immer wieder neu geladen
+
+- API Schnittstellen:
+
+\textit{\textbf{GET} /type}, gibt den Typen des Backends zurück. \\
+\begin{lstlisting}[caption={\ac{JSON} der Route \textbf{GET} /question/ids }, label=get-ids, language=typescript]
+{
+  "type": "express" | "spring" | "django" // Backend Typ
+}
+\end{lstlisting}
+
+\textit{\textbf{GET} /question/ids}, gibt eine Liste aller ids in Form von Nummern zurück. \\
+\begin{lstlisting}[caption={\ac{JSON} der Route \textbf{GET} /type }, label=type, language=typescript]
+number[]
+\end{lstlisting}
+
+\textit{\textbf{GET} /question/\{id\}}, gibt eine Frage anhand id zurück. \\
+\begin{lstlisting}[caption={\ac{JSON} der Route \textbf{GET} /question/\{id\} }, label=get-questionbyid, language=typescript]
+{
+  "id": number, // ID der Frage zur Identifikation
+  "question": string // Die Frage
+  "options": [
+    {
+      "type": "a" | "b" | "c", // Antwortmöglichkeiten
+      "text": string // Text der Antwortmöglichkeit
+    }
+  ]
+}
+\end{lstlisting}
+
+\textit{\textbf{GET} /question}, gibt eine Liste aller Fragen zurück. \\
+\begin{lstlisting}[caption={\ac{JSON} der Route \textbf{GET} /question }, label=get-question, language=typescript]
+[
+  {
+    ... //siehe /question/{id} Objekt
+  },
+  ...
+]
+\end{lstlisting}
+
+\textit{\textbf{POST} /question}, gibt eine Fragen anhand id zurück. \\
+\begin{lstlisting}[caption={Request \ac{JSON} der Route \textbf{POST} /question }, label=post-question-req, language=typescript]
+{
+  "id": number,
+  "answer": "a" | "b" | "c"
+}
+\end{lstlisting}
+\begin{lstlisting}[caption={Response \ac{JSON} der Route \textbf{POST} /question }, label=post-question-res, language=typescript]
+{
+  "id": number,
+  "isCorrect": boolean // Ob die Antwort richtig war
+}
+\end{lstlisting}
+
+
 \subsection{Ergebnisse und erlangtes Wissen}
 
 \section{Schlussfolgerung und Ausblick}
