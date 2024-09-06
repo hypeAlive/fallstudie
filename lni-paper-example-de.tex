@@ -297,11 +297,119 @@ Für Anfänger kann \ac{JSX} ungewohnt sein und eine gewisse Einarbeitungszeit e
 
 \subsection{Backend-Technologien im Vergleich: Express, Springboot und Django}
 
+Nachdem wir uns mit den Frontend-Technologien beschäftigt haben, werfen wir nun einen Blick auf die Backend-Technologien.
+Dabei werden wir uns Express, Springboot und Django genauer ansehen.
+
+16.982.234 Unternehmen nutzen laut enlyft.com SoftwareFrameworks.
+Darunter auch die Vorgestellten.
+Für Express fand enlyft.com 119.736 Unternehmen, für Django 37.230 und für Spring nur 138.
+Die Zahlen zeigen, dass Express und Django deutlich beliebter sind als Spring.
+Natürlich beziehen sich diese Zahlen nur auf eine begrenzte Anzahl von Unternehmen und sind nicht repräsentativ.
+Dennoch geben sie einen groben Überblick über die Beliebtheit der Frameworks aus unternehmerischer Sicht.
+
 \subsubsection{Express}
+
+Wie bereits erwähnt, kann \ac{JS} auch serverseitig verwendet werden.
+Dies wird durch die Nutzung von Node.js ermöglicht, wodurch JavaScript auch außerhalb des Browsers eingesetzt werden kann.
+Express ist ein populäres Framework, das auf Node.js aufbaut.
+
+Express zeichnet sich besonders durch seine Einfachheit und Benutzerfreundlichkeit aus,
+was es ideal für schnelle und unkomplizierte Lösungen macht.
+Es ist ein “unaufdringliches” Framework, das Entwicklern viele Freiheiten lässt und nur wenige vordefinierte Strukturen vorgibt.
+
+Ein großer Vorteil von JavaScript ist,
+dass Entwickler sowohl das Frontend als auch das Backend in derselben Sprache entwickeln können,
+ohne eine neue Sprache erlernen zu müssen.
+Javascript ist jedoch eine untypisierte Sprache.
+Fehler können oft erst zur Laufzeit entdeckt werden, was im Backendbereich,
+wo Sicherheit und Stabilität von großer Bedeutung sind, problematisch sein kann.
+Typescript bietet hier eine Lösung, indem es Typisierung einführt, während es nahtlos mit Express integriert werden kann.
+
+Eine weitere besondere Stärke von Express ist die einfache Unterstützung für Server Side Rendering (SSR).
+Bei SSR wird die Webseite auf dem Server gerendert und dann als fertiges HTML an den Client gesendet,
+was die Ladezeit erheblich verkürzt und die Performance verbessert.
+
+Allerdings bringt die Leichtgewichtigkeit und Flexibilität von Express auch einige Nachteile mit sich.
+Es fehlen integrierte Funktionen, die andere, umfangreichere Frameworks bieten,
+wie z.B. Datenbankintegration, Sicherheitsfunktionen oder Authentifizierungsmechanismen.
+Diese müssen in Express durch zusätzliche Module ergänzt werden,
+was zusätzlichen Zeitaufwand erfordert und eine sorgfältige Verwaltung der Abhängigkeiten notwendig macht.
+
 \subsubsection{Springboot}
+
+Spring Boot ist ein leistungsstarkes Framework für die Backend Entwicklung in Java,
+das auf dem bewährten Spring Framework basiert.
+Es vereinfacht die Entwicklung erheblich,indem es den Ansatz “Convention over Configuration” verfolgt.
+Das bedeutet, dass viele Konfigurationen automatisch übernommen werden,
+was den typischen Boilerplate-Code durch Java reduziert und den Entwicklern ermöglicht,
+sich auf die wesentlichen Teile ihrer Anwendung zu konzentrieren.
+
+Viele wichtige Funktionen, wie die Integration von Datenbanken oder Sicherheitsfunktionen,
+werden von Spring Boot direkt unterstützt.
+Dies bedeutet, dass Entwickler nicht auf Drittanbieter-Bibliotheken zurückgreifen müssen,
+um grundlegende Funktionalitäten zu implementieren.
+
+Ein Beispiel dafür, wie Spring Boot die Entwicklung erleichtert, ist die automatische Konvertierung von Java-Klassen in JSON-Objekte.
+So können Entwickler einfach Java-Objekte erstellen und diese direkt an den Client senden, ohne sich um die Konvertierung kümmern zu müssen.
+
+Solche Funktionen machen Spring Boot beliebt, aber diese vermeindliche Magie hat auch Nachteile.
+Die Automatisierungen können dazu führen, dass Entwickler nicht verstehen, was im Hintergrund passiert.
+Somit steigt auch die Lernkurve, da es sehr aufwendig sein kann, sich in die genauen Funktionsweisen einzuarbeiten.
+Darüber hinaus kann die Komplexität von Spring Boot bei kleineren Projekten zu so genannten Overhead führen,
+da viele der angebotenen Funktionen möglicherweise nicht benötigt werden.
+Overhead bezeichnet in diesem Zusammenhang den zusätzlichen Aufwand an Ressourcen,
+wie Speicher und Rechenleistung, der durch unnötige oder ungenutzte Funktionen entsteht.
+Dies kann sich negativ auf die Performance auswirken.
+
 \subsubsection{Django}
 
+Django basiert auf Python und zeichnet sich dadurch aus,
+dass es alle notwendigen Komponenten für die Entwicklung einer Webanwendung bereits integriert hat.
+Dies vereinfacht den Entwicklungsprozess erheblich.
+
+Ein besonders markantes Merkmal von Django ist das automatisch generierte Admin-Interface.
+Dieses erleichtert die Verwaltung von Datenbanken erheblich und spart Entwicklern viel Zeit und Arbeit,
+da sie keine eigene Verwaltungsoberfläche entwickeln müssen.
+
+Darüber hinaus bietet Django standardmäßig umfangreiche Sicherheitsmechanismen,
+wie z.B. den Schutz gegen SQL-Injections, ein Angriff auf die Datenbank.
+Dadurch können Entwickler sichere Anwendungen erstellen,
+ohne sich um viele der typischen Sicherheitslücken kümmern zu müssen.
+
+Ein Nachteil von Django ist jedoch,
+dass das Framework sehr strikt aufgebaut ist und wenig Flexibilität bietet.
+Diese Striktheit kann in einigen Projekten als Einschränkung empfunden werden,
+insbesondere wenn besondere Anpassungen erforderlich sind.
+Darüber hinaus hat Django eine eher steile Lernkurve, insbesondere für Entwickler, die noch nicht mit Python vertraut sind.
+
 \subsection{Wie arbeiten Backend und Frontend zusammen?}
+
+Es gibt mehrere Möglichkeiten, wie das Backend mit dem Frontend kommunizieren kann.
+Zwei der gängigsten Methoden sind REST-APIs und WebSocket-Server.
+Beide basieren auf HTTP, ein Protokoll, das die Kommunikation zwischen Server und Client ermöglicht.
+Während REST-APIs in den meisten klassischen Webanwendungen für den Datenaustausch verwendet werden,
+sind WebSockets besonders für Echtzeitanwendungen von großer Bedeutung.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.8\textwidth]{communication}
+  \caption{Stackoverflow Fragen Frontend-Frameworks.}
+  \label{fig:communication}
+  \vspace{-0.3cm}
+  \begin{center}
+    \footnotesize Quelle: \cite{WebCon}
+  \end{center}
+\end{figure}
+
+\Cref{fig:communication} zeigt den grundlegenden Unterschied zwischen REST-APIs (unten) und WebSockets (oben).
+
+REST-APIs basieren auf dem klassischen Anfrage-Antwort-Modell.
+Das Frontend sendet eine HTTP-Anfrage an das Backend und erhält eine Antwort in Form von JSON oder einem anderen Format zurück.
+
+WebSockets hingegen ermöglichen eine Echtzeit-Kommunikation.
+Sobald eine Verbindung zwischen dem Client (Frontend) und dem Server (Backend) hergestellt ist,
+können beide Seiten kontinuierlich Nachrichten senden und empfangen, ohne die Notwendigkeit, eine neue Anfrage zu stellen.
+Dies ist besonders nützlich für Anwendungen wie Chats, Multiplayer-Games.
 
 \section{Die GLS Quiz App}
 \subsection{Ist-Zustand der App}
@@ -344,20 +452,578 @@ Stattdessen soll das Backend auf eine einfache Methode zurückgreifen, wie zum B
 
 \subsection{Umsetzung}
 
-- gesamtes Projekt unter https://github.com/hypeAlive/fallstudie-impl.git
+Das gesamte Projekt mit zusätzlichen Informationen und Code ist auf GitHub unter folgendem Link verfügbar: https://github.com/hypeAlive/fallstudie-impl.git.
+Für jedes Backend und Frontend ist die wichtigste Code-Datei im Anhang enthalten.
+Im Backend handelt es sich um die Routendefinition und im Frontend um die QuestionComponent.
 
 \subsubsection{Frontend}
 
-- Läuft bei allen auf port 2400
+Das Frontend der Anwendung wird lokal auf Port 2400 (localhost:2400) ausgeführt.
+Für das Design kommt TailwindCSS zusammen mit der Bibliothek daisyUI zum Einsatz,
+um das Layout und die Komponenten zu gestalten.
+
+Die Hauptkomponente ist immer sichtbar und enthält sämtliche Routen.
+Direkt beim Laden der Seite wird der Typ des Backends vom Server abgefragt.
+Basierend auf dieser Information wird dann das entsprechende Backend-Bild angezeigt,
+das zusammen mit einem Bild des Frontends in der Oberfläche eingebettet wird.
+
+Die Startseite der Anwendung (im Code bezeichnet als HomeComponent),
+die unter der Route / erreichbar ist, zeigt einen Button mit der Aufschrift “Start” an.
+Durch einen Klick auf diesen Button wird der Benutzer auf die Route /question weitergeleitet,
+die das eigentliche Quiz beinhaltet.
+
+Die Quiz-Seite (im Code bezeichnet als QuestionComponent) fragt beim ersten Laden alle verfügbaren ids an Fragen vom Backend ab.
+Sobald die IDs verfügbar sind,
+wählt das Frontend zufällig eine ID aus und fragt die dazugehörige Frage und deren Antwortmöglichkeiten vom Backend ab.
+Diese Informationen werden dann auf der Seite angezeigt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.8\textwidth]{question-component}
+  \caption{Route \textit{/question} mit Angular und Express.}
+  \label{fig:question-component}
+\end{figure}
+
+Zusätzlich dazu enthält diese Seite einen Button,
+der je nach Zustand der Anwendung unterschiedliche Funktionen erfüllt.
+Wenn eine Frage geladen und angezeigt wird, ermöglicht er dem Nutzer,
+seine ausgewählte Antwort zu bestätigen.
+Diese Antwort wird an das Backend gesendet, wo sie auf Richtigkeit geprüft wird.
+Anschließend erhält der Nutzer eine Rückmeldung, ob seine Antwort korrekt war.
+Nach dieser Überprüfung ändert sich die Funktion des Buttons, und ermöglicht es die nächste Frage zu laden.
 
 \subsubsection{Backend}
 
-- Läuft bei allen auf port 8080
-- sendet und empfängt JSON
-- Simulierte Datenbank in Form von JSON Datei, die von allen Backends geteilt wird
-    - läd bei start einmal alle Fragen in das Backend, also wird nicht immer wieder neu geladen
+Das Backend ist eine REST-API und läuft auf Port 8080 (localhost:8080).
+Es sendet und empfängt JSON-Daten.
+Außderdem hat es eine simulierte Datenbank, die in Form einer JSON-Datei vorliegt.
+Diese Datei wird beim Start des Backends einmalig geladen,
+sodass die Daten nicht bei jedem Zugriff neu aus der Datei gelesen werden müssen.
 
-- API Schnittstellen:
+Die API-Schnittstellen des Backends sind durch Routen definiert, die bestimmte Endpunkte bereitstellen.
+Diese Endpunkte erlauben es dem Frontend, verschiedene Anfragen an das Backend zu senden, etwa um Fragen aus der Datenbank zu laden oder um Antworten zu überprüfen.
+Die genauen Routen und ihre Definitionen sind im Anhang zu finden.
+
+\subsection{Ergebnisse und erlangtes Wissen}
+
+\section{Schlussfolgerung und Ausblick}
+
+\newpage
+\section{Anhang}
+\subsubsection{Implementierung}
+
+\subsubsection{Komponenten}
+
+\textit{\textbf{QuestionComponent} Angular} \\
+\begin{lstlisting}[caption={question.component.ts}, label=qc-ng, language=typescript]
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {AppComponent} from "../app.component";
+import {firstValueFrom} from "rxjs";
+import {AnswerRes, AnswerType, QuestionHidden} from "api-types";
+import {NgClass, NgForOf, NgIf, NgTemplateOutlet} from "@angular/common";
+import {QuestionOption} from "api-types/dist/quiz.type";
+
+@Component({
+  selector: 'app-question',
+  standalone: true,
+  imports: [
+    NgForOf,
+    NgIf,
+    NgClass,
+    NgTemplateOutlet
+  ],
+  templateUrl: './question.component.html',
+  styleUrl: './question.component.css'
+})
+export class QuestionComponent implements OnInit{
+
+  private static QUESTIONS: number[] | undefined = undefined;
+
+  protected question: QuestionHidden | undefined = undefined;
+  protected selectedAnswer: AnswerType | undefined = undefined;
+  protected isCorrect: boolean | undefined = undefined;
+  protected isLoading: boolean = true;
+
+  constructor(private http: HttpClient) {
+  }
+
+  ngOnInit(): void {
+    if (QuestionComponent.QUESTIONS === undefined) {
+      firstValueFrom<number[]>(this.http.get<number[]>(AppComponent.API_URL + '/question/ids'))
+        .then(r => {
+          QuestionComponent.QUESTIONS = r;
+          this.requestRandomQuestions();
+        })
+    } else {
+      this.requestRandomQuestions();
+    }
+  }
+
+  protected requestRandomQuestions(): void {
+    this.isLoading = true;
+    this.question = undefined;
+    this.selectedAnswer = undefined;
+    this.isCorrect = undefined;
+    firstValueFrom<QuestionHidden>(this.http.get<QuestionHidden>(AppComponent.API_URL + '/question/' + QuestionComponent.QUESTIONS![Math.floor(Math.random() * QuestionComponent.QUESTIONS!.length)]))
+      .then(r => {
+        this.question = r;
+        this.isLoading = false;
+        console.log(r);
+      });
+  }
+
+  protected onOptionSelected(option: QuestionOption): void {
+    this.selectedAnswer = option.type;
+  }
+
+  protected submitAnswer(): void {
+    if(!this.selectedAnswer || !this.question) return;
+
+    const checkId = this.question.id;
+    this.question = undefined;
+    this.isLoading = true;
+
+    firstValueFrom<AnswerRes>(this.http.post<AnswerRes>(AppComponent.API_URL + '/question', {
+      id: checkId,
+      answer: this.selectedAnswer
+    }))
+      .then(r => {
+        console.log(r);
+        this.isCorrect = r.isCorrect;
+        this.isLoading = false;
+      });
+  }
+}
+\end{lstlisting}
+
+\textit{\textbf{QuestionComponent} React} \\
+\begin{lstlisting}[caption={QuestionComponent.jsx}, label=qc-rc, language=javascript]
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './QuestionComponent.css';
+
+const QuestionComponent = () => {
+  const [question, setQuestion] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [questionIds, setQuestionIds] = useState([]);
+
+  const BackendPictures = {
+    spring: 'src/assets/spring_logo.png',
+    django: 'src/assets/django_logo.png',
+    express: 'src/assets/expressjs_logo.png',
+  };
+
+  useEffect(() => {
+    const fetchQuestionIds = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/question/ids');
+        setQuestionIds(response.data);
+        requestRandomQuestions(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchQuestionIds();
+  }, []);
+
+  const requestRandomQuestions = async (ids) => {
+    setIsLoading(true);
+    setQuestion(null);
+    setSelectedAnswer(null);
+    setIsCorrect(null);
+
+    try {
+      const randomId = ids[Math.floor(Math.random() * ids.length)];
+      const response = await axios.get(`http://localhost:8080/api/question/${randomId}`);
+      setQuestion(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const onOptionSelected = (option) => {
+    setSelectedAnswer(option.type);
+  };
+
+  const submitAnswer = async () => {
+    if (!selectedAnswer || !question) return;
+
+    const checkId = question.id;
+    setQuestion(null);
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post('http://localhost:8080/api/question', {
+        id: checkId,
+        answer: selectedAnswer,
+      });
+      setIsCorrect(response.data.isCorrect);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <div>
+      {isLoading ? (
+        <span className="loading loading-spinner text-secondary"></span>
+      ) : (
+        <div>
+          {question ? (
+            <div className="flex flex-col justify-center items-center">
+              <h2 className="text-2xl font-bold mb-4">{question.question}</h2>
+              <div className="flex flex-col gap-2">
+                {question.options.map((option) => (
+                  <label className="flex items-center gap-2" key={option.type}>
+                    <input
+                      type="radio"
+                      name="radio-3"
+                      className="radio radio-secondary"
+                      value={option}
+                      onClick={() => onOptionSelected(option)}
+                    />
+                    <span>{`${option.type}) ${option.text}`}</span>
+                  </label>
+                ))}
+              </div>
+              <button
+                className={`btn btn-active btn-primary min-w-60 mt-4 hover:bg-primary-dark ${!selectedAnswer ? 'btn-disabled' : ''}`}
+                onClick={submitAnswer}
+              >
+                Bestätigen
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col justify-center items-center">
+              <h2 className={`text-2xl font-bold mb-4 result ${isCorrect === false ? 'wrong' : ''}`}>
+                {isCorrect ? 'Correct!' : 'Incorrect!'}
+              </h2>
+              <button
+                className="btn btn-active btn-primary min-w-60 mt-4 hover:bg-primary-dark"
+                onClick={() => requestRandomQuestions(questionIds)}
+              >
+                Next Question
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default QuestionComponent;
+\end{lstlisting}
+
+\textit{\textbf{QuestionComponent} Vue} \\
+\begin{lstlisting}[caption={QuestionComponent.vue}, label=qc-ve, language=javascript]
+<template>
+  <div>
+    <span v-if="isLoading" class="loading loading-spinner text-secondary"></span>
+    <div v-else>
+      <div v-if="question" class="flex flex-col justify-center items-center">
+        <h2 class="text-2xl font-bold mb-4">{{ question.question }}</h2>
+        <div class="flex flex-col gap-2">
+          <label v-for="option in question.options" :key="option.type" class="flex items-center gap-2">
+            <input
+              type="radio"
+              name="radio-3"
+              class="radio radio-secondary"
+              :value="option"
+              @click="onOptionSelected(option)"
+            />
+            <span>{{ `${option.type}) ${option.text}` }}</span>
+          </label>
+        </div>
+        <button
+          class="btn btn-active btn-primary min-w-60 mt-4 hover:bg-primary-dark"
+          :class="{ 'btn-disabled': !selectedAnswer }"
+          @click="submitAnswer"
+        >
+          Bestätigen
+        </button>
+      </div>
+      <div v-else class="flex flex-col justify-center items-center">
+        <h2 :class="['text-2xl font-bold mb-4 result', { wrong: isCorrect === false }]">
+          {{ isCorrect ? 'Correct!' : 'Incorrect!' }}
+        </h2>
+        <button
+          class="btn btn-active btn-primary min-w-60 mt-4 hover:bg-primary-dark"
+          @click="requestRandomQuestions(questionIds)"
+        >
+          Next Question
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
+const question = ref(null);
+const selectedAnswer = ref(null);
+const isCorrect = ref(null);
+const isLoading = ref(true);
+const questionIds = ref([]);
+
+const BackendPictures = {
+  spring: '@/assets/spring_logo.png',
+  django: '@/assets/django_logo.png',
+  express: '@/assets/expressjs_logo.png',
+};
+
+const fetchQuestionIds = async () => {
+  try {
+    const response = await axios.get('http://localhost:8080/api/question/ids');
+    questionIds.value = response.data;
+    requestRandomQuestions(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const requestRandomQuestions = async (ids) => {
+  isLoading.value = true;
+  question.value = null;
+  selectedAnswer.value = null;
+  isCorrect.value = null;
+
+  try {
+    const randomId = ids[Math.floor(Math.random() * ids.length)];
+    const response = await axios.get(`http://localhost:8080/api/question/${randomId}`);
+    question.value = response.data;
+    isLoading.value = false;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const onOptionSelected = (option) => {
+  selectedAnswer.value = option.type;
+};
+
+const submitAnswer = async () => {
+  if (!selectedAnswer.value || !question.value) return;
+
+  const checkId = question.value.id;
+  question.value = null;
+  isLoading.value = true;
+
+  try {
+    const response = await axios.post('http://localhost:8080/api/question', {
+      id: checkId,
+      answer: selectedAnswer.value,
+    });
+    isCorrect.value = response.data.isCorrect;
+    isLoading.value = false;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+onMounted(fetchQuestionIds);
+</script>
+
+<style scoped>
+@import './QuestionComponent.css';
+</style>
+\end{lstlisting}
+
+\textit{\textbf{API Definition} Express} \\
+\begin{lstlisting}[caption={api.ts}, label=api-ex, language=typescript]
+import {Router} from "express";
+import {AnswerReq, AnswerRes} from "api-types";
+import Question from "../model/Question.js";
+import fs from 'fs';
+import path from 'path';
+import {LOGGER} from "../main.js";
+import {BACKEND_TYPE} from "api-types/dist/quiz.type.js";
+const dataPath = path.resolve('../data.json');
+
+let questions: Question[] = [];
+
+try {
+    const data = fs.readFileSync(dataPath, 'utf8');
+    questions = Question.fromJson(JSON.parse(data));
+    LOGGER.info('JSON file read');
+} catch (err) {
+    LOGGER.error('Error while reading JSON file');
+    console.error(err);
+}
+
+export const router = Router();
+router.get("/", (req, res) => {
+    res.send("Example CaseStudy API for express!");
+});
+
+router.get("/type", (req, res) => {
+   res.status(200).send({type: 'express'});
+});
+
+router.get("/question", (req, res) => {
+    res.status(200)
+        .send(questions
+            .map((question) => question.getHidden()
+            )
+        );
+    LOGGER.info('Question data sent');
+});
+
+router.get("/question/ids", (req, res) => {
+    res.status(200).send(questions.map((question) => question.getId()));
+});
+
+router.get("/question/:id", (req, res) => {
+    const id = Number(req.params.id);
+    if(isNaN(id)) {
+        res.status(400).send('Invalid ID');
+        return;
+    }
+    const question = questions.find((question) => question.getId() === id);
+    if(!question) {
+        res.status(404).send('Question not found');
+        return;
+    }
+    res.status(200).send(question.getHidden());
+});
+
+router.post("/question", (req, res) => {
+
+    const answer: AnswerReq = req.body;
+
+    const question = questions.find((question) => question.getId() === answer.id);
+
+    if (!question) {
+        res.status(404)
+            .send("Question not found");
+        LOGGER.error('Question not found');
+        return;
+    }
+
+    res.status(200)
+        .send({
+            id: question.getId(),
+            isCorrect: question.isCorrect(answer.answer)
+        } as AnswerRes
+        );
+
+    LOGGER.info('Answer data sent');
+});
+\end{lstlisting}
+
+
+\textit{\textbf{API Definition} SpringBoot} \\
+\begin{lstlisting}[caption={QuestionController.java}, label=api-sp, language=java]
+package de.alive.example.controller;
+
+import de.alive.example.model.Question;
+import de.alive.example.service.QuestionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class QuestionController {
+
+    @Autowired
+    private QuestionService questionService;
+
+    @GetMapping("/type")
+    public String getBackendType() {
+        return "{\"type\": \"spring\"}";
+    }
+
+    @GetMapping("/question")
+    public List<Question.QuestionHidden> getQuestions() {
+        return questionService.getAllQuestions().stream().map(Question::getHidden).toList();
+    }
+
+    @GetMapping("/question/ids")
+    public List<Integer> getQuestionIds() {
+        return questionService.getAllQuestionIds();
+    }
+
+
+    @GetMapping("/question/{id}")
+    public Question.QuestionHidden getQuestionById(@PathVariable int id) {
+        return questionService.getQuestionById(id).getHidden();
+    }
+
+    @PostMapping("/question")
+    public Question.AnswerRes checkAnswer(@RequestBody Question.AnswerReq answer) {
+        return questionService.checkAnswer(answer.getId(), answer.getAnswer());
+    }
+}
+\end{lstlisting}
+
+\textit{\textbf{API Definition} Django} \\
+\begin{lstlisting}[caption={views.py}, label=api-dj, language=python]
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Question
+import json
+import os
+
+data_path = os.path.join(os.path.dirname(__file__), '../../../data.json')
+print(data_path)
+questions = []
+
+try:
+    with open(data_path, 'r') as file:
+        data = json.load(file)
+        questions = Question.from_json(data)
+except json.JSONDecodeError as e:
+    print(f"Error decoding JSON data: {e}")
+except KeyError as e:
+    print(f"Missing expected key in JSON data: {e}")
+except Exception as e:
+    print(f"Error loading JSON data: {e}")
+
+def index(request):
+    return HttpResponse("Example CaseStudy API for Django!")
+
+def get_questions(request):
+    data = [question.get_hidden() for question in questions]
+    return JsonResponse(data, safe=False)
+
+def get_question_ids(request):
+    data = [question.id for question in questions]
+    return JsonResponse(data, safe=False)
+
+def get_question_by_id(request, id):
+    question = next((q for q in questions if q.id == id), None)
+    if question:
+        return JsonResponse(question.get_hidden())
+    return HttpResponse(status=404)
+
+@csrf_exempt
+def post_answer(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        question = next((q for q in questions if q.id == data['id']), None)
+        if question:
+            is_correct = question.is_correct(data['answer'])
+            response = {
+                'id': question.id,
+                'isCorrect': is_correct
+            }
+            return JsonResponse(response)
+        return HttpResponse(status=404)
+    return HttpResponse(status=400)
+
+\end{lstlisting}
+
+\subsubsection{API Schnittstellen}
 
 \textit{\textbf{GET} /type}, gibt den Typen des Backends zurück. \\
 \begin{lstlisting}[caption={\ac{JSON} der Route \textbf{GET} /question/ids }, label=get-ids, language=typescript]
@@ -409,13 +1075,6 @@ number[]
 }
 \end{lstlisting}
 
-
-\subsection{Ergebnisse und erlangtes Wissen}
-
-\section{Schlussfolgerung und Ausblick}
-
-\newpage
-\section{Anhang}
 \newpage
 \printbibliography
 
