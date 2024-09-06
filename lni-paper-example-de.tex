@@ -506,6 +506,45 @@ Die genauen Routen und ihre Definitionen sind im Anhang zu finden.
 
 \subsection{Ergebnisse und erlangtes Wissen}
 
+Folgende Tabelle fasst die wichtigsten Erkenntnisse aus der Implementierung zusammen:
+
+\begin{table}[h!]
+  \centering
+  \caption{Vergleich der Backend-Frameworks}
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    \textbf{Kriterium}            & \textbf{Django}                                             & \textbf{Express}                                           & \textbf{Spring}                                             \\ \midrule
+    \textbf{Zeilen Code (LoC)}    & 165                                                        & 135                                                        & 173                                                        \\ \midrule
+    \textbf{Vorteile}             & \begin{tabular}[c]{@{}l@{}}+ Übersichtlich: \\ \texttt{urls.py} \\ + Admin-Interface \\ automatisch generiert\end{tabular} & \begin{tabular}[c]{@{}l@{}}+ Einfache, \\ übersichtliche \\ Struktur\\ + Leicht zu verstehen\end{tabular} & \begin{tabular}[c]{@{}l@{}}+ Schnelle \\ Einrichtung\\ + Automatische \\ Konvertierung von \\ Java-Klassen zu JSON\end{tabular} \\ \midrule
+    \textbf{Nachteile}            & \begin{tabular}[c]{@{}l@{}}- Aufwendige \\ Einrichtung\\ - Python anders \\ als im Frontend\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Alles manuell \\ schreiben\\ - Mit TypeScript \\ aufwendiger\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Weniger \\ übersichtliche Routen\\ - Neue Sprache \\ im Vergleich zum \\ Frontend\end{tabular} \\ \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \caption{Vergleich der Frontend-Frameworks}
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    \textbf{Kriterium}            & \textbf{Angular}                                            & \textbf{React}                                             & \textbf{Vue}                                               \\ \midrule
+    \textbf{Zeilen Code (LoC)}    & 213                                                        & 190                                                        & 176                                                        \\ \midrule
+    \textbf{Vorteile}             & \begin{tabular}[c]{@{}l@{}}+ Klare Trennung: \\ HTML, CSS, TS\\ + Einfacher \\ HttpClient\end{tabular} & \begin{tabular}[c]{@{}l@{}}+ Weniger Dateien\\ + Einstieg leicht \\ durch weniger Konzepte\end{tabular} & \begin{tabular}[c]{@{}l@{}}+ Ähnlich wie React \\ + Einfache Struktur\\ + Schneller Einstieg\end{tabular} \\ \midrule
+    \textbf{Nachteile}            & \begin{tabular}[c]{@{}l@{}}- Viele Konzepte\\ für den Einstieg\end{tabular} & \begin{tabular}[c]{@{}l@{}}- JSX ungewohnt\\ - Externe Library \\ für Anfragen nötig\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Kombination \\ von .vue Dateien \\ ungewohnt\\ - Externe Library \\ für Anfragen nötig\end{tabular} \\ \bottomrule
+  \end{tabular}
+\end{table}
+
+Zusammenfassend haben sich einige Vor- und Nachteile der verschiedenen Frameworks bestätigt.
+Zum Beispiel punktet Express durch seine Einfachheit und Flexibilität, während Django und Spring durch automatische Features überzeugen.
+
+Auf der Frontend-Seite hat sich gezeigt, dass Angular durch seine klare Trennung von HTML, CSS und TypeScript gut strukturiert ist,
+jedoch schwieriger zu erlernen ist.
+React und Vue bieten einen einfacheren Einstieg.
+Vue kombiniert dabei die Vorteile von React und Angular.
+
+Der wichtigste Erkenntnisgewinn aus der Implementierung ist jedoch,
+dass die Wahl der Kombination von Frontend- und Backend-Frameworks nicht entscheidend für den Erfolg der Implementierung ist.
+Die Kommunikation zwischen den beiden Schichten erfolgt grundsätzlich auf ähnliche Weise,
+und es liegt eher an den individuellen Anforderungen und Präferenzen des Entwicklers, welche Technologien gewählt werden.
+
 \section{Schlussfolgerung und Ausblick}
 
 \newpage
