@@ -88,7 +88,7 @@ Das Thema wird anhand des Fallbeispiels einer GLS Quiz App erläutert und analys
 \subsection{Hintergrund und Motivation}
 Software wird zunehmend komplexer und enthält immer mehr Funktionen, von denen viele standardisiert und wiederkehrend sind.
 Je größer das Projekt, desto schwieriger wird es, den Überblick zu behalten – insbesondere bei Webanwendungen,
-die sich kontinuierlich weiterentwickeln und fortlaufend programmiert werden.
+die sich kontinuierlich weiterentwickeln.
 Um den Überblick zu bewahren, sind daher Konzepte notwendig, die eine Erweiterbarkeit sicherstellen.
 Außerdem muss Software skalierbar und gleichzeitig effizient sein.
 
@@ -207,24 +207,14 @@ einer sehr bekannten Plattform für Programmierfragen, über die relevanten Jahr
 Die Grafik bietet zwar keinen umfassenden Einblick in die Nutzung von Frameworks in Unternehmen,
 liefert jedoch eine grobe Orientierung darüber, welche Technologien Entwickler auch privat verwenden und somit bevorzugen.
 
-Für den Vergleich der Frontend-Frameworks beziehe ich mich auf bereits vorhandene Vergleiche von
-entwickler.de und browserstack.com. \cite{BStack} \cite{Dev}
-Zusätzlich werde ich die jeweiligen Dokumentationen der Frameworks heranziehen,
-um detaillierte Informationen und aktuelle Entwicklungen zu berücksichtigen.
-
-Alle 3 Frameworks sind Open-Source, also frei verfügbar und können von jedem genutzt und weiterentwickelt werden.
-
 \subsubsection{Vue}
 Vue.js wurde 2014 von Evan You entwickelt und ist das jüngste der 3 Frameworks. \cite{AmD}
 Es basiert auf der Idee einer \ac{SPA}, also einer Anwendung, die nur eine Seite lädt und dann dynamisch aktualisiert. \cite{BStack}
-Der Vorteil an einer solchen WebApp ist, dass sie schneller und flüssiger läuft, da nicht bei jedem Klick eine neue Seite geladen werden muss.
-Es wurde entwickelt, um die besten Teilaspekte von Angular zu übernehmen und gleichzeitig die Komplexität zu reduzieren,
-was in einem effizienten und leistungsstarken Tool endete.
+Der Vorteil an einer solchen WebApp ist, dass sie schneller und flüssiger läuft, da nicht bei jedem Klick die Seite neu geladen werden muss.
+Vue wurde entwickelt, um die besten Teilaspekte von Angular zu übernehmen und gleichzeitig die Komplexität zu reduzieren.
 
 Die neueste Version, Vue 3,
 wurde 2020 veröffentlicht und bringt signifikante Verbesserungen und neue Funktionen mit sich. \cite{vue}
-Vue 3 bietet eine verbesserte Leistung durch den neuen Compiler, ein Programm, welches deinen Code in JavaScript übersetzt und somit für den Browser verständlich macht.
-Dieser Compiler analysiert den Code und optimiert ihn, um die Ausführung zu beschleunigen.
 Zudem unterstützt Vue 3 die TypeScript-Integration besser, was die Typisierung und Wartung des Codes erleichtert.
 \ac{TS} ist eine Programmiersprache, die auf JavaScript aufbaut und zusätzliche Funktionen wie Typisierung und Klassen bietet. \cite{ts}
 Somit wird der Code sicherer und einfacher zu warten.
@@ -235,12 +225,11 @@ Dennoch ist es eindeutig auf Platz 3.
 Zu erkennen ist ein Abfall der Fragen von VueJS und ein Anstieg von Vue 3, was den Versionswechsel verdeutlicht.
 Dieser zieht sich aber eher hin und geht langsam voran.
 
-Eines der Vorteile von vue ist, dass es eine sehr kurze Lernkurve hat. \cite{Dev}
+Eines der Vorteile von Vue ist, dass es eine sehr kurze Lernkurve hat. \cite{Dev}
 Im Vergleich zu anderen Frameworks wie Angular oder React,
 ist Vue sehr anfängerfreundlich und benötigt nicht viele Vorkenntnisse.
 Trotzdem ist es sehr leistungsstark und kann auch für größere Projekte verwendet werden.
 Außerdem ist Vue sehr klein und verhindert somit, dass die Seite lange zum Laden benötigt.
-Heutzutage ist das ein sehr wichtiger Faktor, da zum Beispiel Google die Ladezeit einer Seite als Rankingfaktor verwendet. \cite{GLZ}
 
 Ein schwerwiegender Nachteil ist jedoch, dass es im Vergleich zu anderen Frameworks weniger Support und weniger Entwickler gibt, wie bereits aus \Cref{fig:fetrends} entnommen. \cite{BStack}
 So kann es dazu führen, dass die Unterstützung von älteren Versionen fehlt oder weniger Erweiterungen verfügbar sind.
@@ -255,12 +244,12 @@ insbesondere aufgrund seiner revolutionären Ansätze,
 wurde der Nachfolger Angular ab 2019 von React überholt und ist seither nicht mehr die beliebteste Wahl.
 Der Übergang von AngularJS zu Angular erfolgte jedoch schneller als der Wechsel von Vue zu Vue 3.
 Seit 2023 ist ein Anstieg der Anzahl an Fragen zu Angular zu beobachten,
-was auf ein wieder wachsendes Interesse an diesem Framework hindeutet.
+was auf ein wieder wachsendes Interesse hindeutet.
 
 Angular wurde von Google entwickelt und basiert auf \ac{TS}. \cite{NG}
 Dabei ist es ein muss, TypeScript zu verwenden, da Angular kein JavaScript unterstützt.
 Meist werden auch \ac{SPA}s mit Angular entwickelt werden, es ist jedoch auch möglich, mehrseitige Anwendungen zu erstellen.
-Eine besonderheit stellt das \ac{CLI} dar, das es ermöglicht, schnell und einfach ein neues Projekt zu erstellen und zu verwalten.
+Eine besonderheit stellt das \ac{CLI} dar, das es ermöglicht, schnell und einfach ein neues Projekt zu erstellen und zu verwalten. %%todo: löschen?
 
 Ein großer Vorteil von Angular ist, dass es sehr Zukunftssicher ist. \cite{BStack}
 Dies kommt dadurch Zustande, da Google hinter dem Framework steht und es ständig weiterentwickelt.
@@ -270,22 +259,22 @@ Es eignet sich perfekt für große Projekt, da die Projektstruktur konsistenz un
 Ein Nachteil ist jedoch, dass Angular sehr komplex ist und eine lange Einarbeitungszeit benötigt. \cite{BStack}
 Dadurch ist es weniger für Anfänger geeignet und benötigt mehr Vorkenntnisse.
 Auch die Ladezeit einer Seite ist länger, da Angular sehr groß ist und viele Funktionen mitbringt.
-Bei großen WebApps spielt das weniger eine Rolle, aber bei kleinen WebApps ist das ein großer Nachteil.
+Bei großen WebApps spielt das weniger eine Rolle, aber bei kleinen WebApps ist das von Nachteil.
 
 \subsubsection{React}
 
-Wie in \Cref{fig:fetrends} zu sehen ist, hat sich React seit seiner Einführung als besonders beliebt erwiesen.
+Wie in \Cref{fig:fetrends} erkennbar, hat sich React seit seiner Einführung als besonders beliebt erwiesen.
 Die stetig wachsende Anzahl der Fragen deutet auf eine wachsende Nutzerbasis hin.
 Der Höhepunkt der Beliebtheit von React war 2022, seitdem fällt die Anzahl der Fragen.
 
 React wurde 2013 von Facebook entwickelt und gehört seither zu den beliebtesten Frontend-Frameworks. \cite{BStack}
-Wie Vue und Angular ist auch React für \ac{SPA}s geeignet und verwendet ein Baustein System, in dem Komponenten wiederverwendet werden können.
+Wie Vue und Angular ist auch React für \ac{SPA}s geeignet und verwendet ein System, in dem Komponenten wiederverwendet werden können.
 Ahnlich wie Vue3 kann React auch mit \ac{TS} verwendet werden.\cite{RCT}
 
 Ein Vorteil von React ist die relativ einfache Lernkurve. \cite{BStack}
 Zudem profitieren Entwickler von der großen Community und den zahlreichen Erweiterungen,
 die viele Funktionen bereits vorgefertigt anbieten,
-sodass sie nicht von Grund auf neu programmiert werden müssen.
+sodass sie nicht neu programmiert werden müssen.
 Damit einher geht auch das React Ökosystem, zudem auch React-Native gehört und es ermöglicht,
 auch mobile Apps zu entwickeln und somit den Code zu teilen. \cite{RCTN}
 
@@ -300,7 +289,7 @@ Für Anfänger kann \ac{JSX} ungewohnt sein und eine gewisse Einarbeitungszeit e
 Nachdem wir uns mit den Frontend-Technologien beschäftigt haben, werfen wir nun einen Blick auf die Backend-Technologien.
 Dabei werden wir uns Express, Springboot und Django genauer ansehen.
 
-16.982.234 Unternehmen nutzen laut enlyft.com SoftwareFrameworks.
+16.982.234 Unternehmen nutzen laut enlyft.com Software Frameworks -
 Darunter auch die Vorgestellten.
 Für Express fand enlyft.com 119.736 Unternehmen, für Django 37.230 und für Spring nur 138.
 Die Zahlen zeigen, dass Express und Django deutlich beliebter sind als Spring.
@@ -315,7 +304,6 @@ Express ist ein populäres Framework, das auf Node.js aufbaut.
 
 Express zeichnet sich besonders durch seine Einfachheit und Benutzerfreundlichkeit aus,
 was es ideal für schnelle und unkomplizierte Lösungen macht.
-Es ist ein “unaufdringliches” Framework, das Entwicklern viele Freiheiten lässt und nur wenige vordefinierte Strukturen vorgibt.
 
 Ein großer Vorteil von JavaScript ist,
 dass Entwickler sowohl das Frontend als auch das Backend in derselben Sprache entwickeln können,
@@ -324,10 +312,6 @@ Javascript ist jedoch eine untypisierte Sprache.
 Fehler können oft erst zur Laufzeit entdeckt werden, was im Backendbereich,
 wo Sicherheit und Stabilität von großer Bedeutung sind, problematisch sein kann.
 Typescript bietet hier eine Lösung, indem es Typisierung einführt, während es nahtlos mit Express integriert werden kann.
-
-Eine weitere besondere Stärke von Express ist die einfache Unterstützung für Server Side Rendering (SSR).
-Bei SSR wird die Webseite auf dem Server gerendert und dann als fertiges HTML an den Client gesendet,
-was die Ladezeit erheblich verkürzt und die Performance verbessert.
 
 Allerdings bringt die Leichtgewichtigkeit und Flexibilität von Express auch einige Nachteile mit sich.
 Es fehlen integrierte Funktionen, die andere, umfangreichere Frameworks bieten,
@@ -339,7 +323,7 @@ was zusätzlichen Zeitaufwand erfordert und eine sorgfältige Verwaltung der Abh
 
 Spring Boot ist ein leistungsstarkes Framework für die Backend Entwicklung in Java,
 das auf dem bewährten Spring Framework basiert.
-Es vereinfacht die Entwicklung erheblich,indem es den Ansatz “Convention over Configuration” verfolgt.
+Es vereinfacht die Entwicklung erheblich, indem es den Ansatz “Convention over Configuration” verfolgt.
 Das bedeutet, dass viele Konfigurationen automatisch übernommen werden,
 was den typischen Boilerplate-Code durch Java reduziert und den Entwicklern ermöglicht,
 sich auf die wesentlichen Teile ihrer Anwendung zu konzentrieren.
@@ -359,11 +343,11 @@ Darüber hinaus kann die Komplexität von Spring Boot bei kleineren Projekten zu
 da viele der angebotenen Funktionen möglicherweise nicht benötigt werden.
 Overhead bezeichnet in diesem Zusammenhang den zusätzlichen Aufwand an Ressourcen,
 wie Speicher und Rechenleistung, der durch unnötige oder ungenutzte Funktionen entsteht.
-Dies kann sich negativ auf die Performance auswirken.
+Dies kann sich negativ auf die Performance auswirken. %%todo: Overhead part kürzen?
 
 \subsubsection{Django}
 
-Django basiert auf Python und zeichnet sich dadurch aus,
+Django basiert auf Python und zeichnet sich, ähnlich wie Spring, dadurch aus,
 dass es alle notwendigen Komponenten für die Entwicklung einer Webanwendung bereits integriert hat.
 Dies vereinfacht den Entwicklungsprozess erheblich.
 
@@ -409,9 +393,13 @@ Das Frontend sendet eine HTTP-Anfrage an das Backend und erhält eine Antwort in
 WebSockets hingegen ermöglichen eine Echtzeit-Kommunikation.
 Sobald eine Verbindung zwischen dem Client (Frontend) und dem Server (Backend) hergestellt ist,
 können beide Seiten kontinuierlich Nachrichten senden und empfangen, ohne die Notwendigkeit, eine neue Anfrage zu stellen.
-Dies ist besonders nützlich für Anwendungen wie Chats, Multiplayer-Games.
+Dies ist besonders nützlich für Anwendungen wie Chats oder Multiplayer-Games.
 
 \section{Die GLS Quiz App}
+
+Nachdem alle nötigen Grundlagen geschaffen sind, befassen wir uns im folgenden Abschnitt weiter mit der GLS Quiz App.
+Wir lernen sie näher kennen, zeigen ihre Probleme auf und kombinieren das bereits gesammelte Wissen in einer Nutzwertanalyse.
+
 \subsection{Ist-Zustand der App}
 
 Die GLS Quiz App bietet mehrere Modi und eine Punktzahlberechnung,
@@ -438,7 +426,7 @@ Diese enthält eine Auflistung der erreichten Punkte, welche Antworten gewählt 
 Je nach Punktestand gibt es ein angepasstes Feedback, z.B. “Du musst noch ein bisschen üben…”.
 Zudem existiert eine Bestenliste pro Modus.
 
-Die App nutzt HTML, CSS und JavaScript im Frontend und speichert die Bestenliste in Amazon AWS DynamoDB.
+Die App nutzt reines HTML, CSS und JavaScript im Frontend und speichert die Bestenliste in Amazon AWS DynamoDB.
 Änderungen und Aktualisierungen in der App erfolgen über den Austausch von HTML-Elementen durch JavaScript.
 Die Fragen sind in einer JavaScript-Datei hinterlegt und einsehbar.
 Ein Teil der App-Komponenten wurde modularisiert,
@@ -455,7 +443,7 @@ Die Reihenfolge der Fragen war nicht zufällig, sondern folgte der Route, ähnli
 
 Ziel der GLS-Quiz App war es, die analoge Version zu digitalisieren.
 
-\subsection{Probleme bei der Umsetzbarkeit des ursprünglichen Konzepts}
+\subsection{Problem bei der Umsetzbarkeit des ursprünglichen Konzepts}
 
 Das Hauptproblem bei der Umsetzung war die Implementierung einer interaktiven Karte,
 die auswählbare Stopps für den Nutzer bietet.
@@ -518,18 +506,16 @@ dass Angular und Django die schlechtesten Werte erzielen und somit nicht für ei
 
 Um das Verständnis zu vertiefen und die Bewertung der Technologien im Bezug auf die GLS-Quiz-App zu erleichtern,
 wird in diesem Abschnitt ein Demo Projekt vorgestellt.
-Der Fokus liegt zunächst auf einer allgemeinen Einführung,
-gefolgt von einer detaillierten technischen Umsetzung.
-Abschließend werden die gewonnenen Erkenntnisse aus der Implementierung dargelegt.
 
 Das Hauptziel besteht darin,
-aus allen Frontend- und Backend-Technologien die bestmögliche Kombination für die finale Lösung zu ermitteln.
+einen Überblick über alle vorgestellten Frontend- und Backend-Technologien zu schaffen,
+um später die bestmögliche Kombination für die finale Lösung zu ermitteln.
 Dazu wird ein Prototyp entwickelt, der mit allen bereits vorgestellten Frontend- und Backend-Technologien realisiert wird,
 sowohl auf der Backend-Seite (Spring Boot, Express, Django) als auch auf der Frontend-Seite (Vue, Angular, React).
 
 \subsection{Das Demo Projekt}
 
-Das Demo-Projekt ist eine simple Fragen-App und simuliert damit auf einer sehr einfachen Ebene die GLS-Quiz-App.
+Das Demo-Projekt ist eine simple Fragen-App und simuliert damit auf einer sehr einfachen Ebene die GLS-Quiz App.
 Die App ist in zwei Hauptteile unterteilt: Frontend und Backend, wie in dem Abschnitt \hyperref[sec:moderne-webtechnologien]{\textit{Überblick über moderne Webtechnologien}} beschrieben.
 
 Die Fragen-App stellt dem Nutzer nacheinander verschiedene Fragen,
@@ -555,7 +541,6 @@ Im Backend handelt es sich um die Routendefinition und im Frontend um die Questi
 
 \subsubsection{Frontend}
 
-Das Frontend der Anwendung wird lokal auf Port 2400 (localhost:2400) ausgeführt.
 Für das Design kommt TailwindCSS zusammen mit der Bibliothek daisyUI zum Einsatz,
 um das Layout und die Komponenten zu gestalten.
 
@@ -591,13 +576,11 @@ Nach dieser Überprüfung ändert sich die Funktion des Buttons, und ermöglicht
 
 \subsubsection{Backend}
 
-Das Backend ist eine REST-API und läuft auf Port 8080 (localhost:8080).
-Es sendet und empfängt JSON-Daten.
+Das Backend sendet und empfängt JSON-Daten.
 Außderdem hat es eine simulierte Datenbank, die in Form einer JSON-Datei vorliegt.
-Diese Datei wird beim Start des Backends einmalig geladen,
-sodass die Daten nicht bei jedem Zugriff neu aus der Datei gelesen werden müssen.
+Diese Datei wird beim Start des Backends einmalig geladen.
 
-Die API-Schnittstellen des Backends sind durch Routen definiert, die bestimmte Endpunkte bereitstellen.
+Backends sind durch Routen definiert, die bestimmte Endpunkte bereitstellen.
 Diese Endpunkte erlauben es dem Frontend, verschiedene Anfragen an das Backend zu senden, etwa um Fragen aus der Datenbank zu laden oder um Antworten zu überprüfen.
 Die genauen Routen und ihre Definitionen sind im Anhang zu finden.
 
