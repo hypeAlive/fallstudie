@@ -393,7 +393,7 @@ sind WebSockets besonders für Echtzeitanwendungen von großer Bedeutung.
 \begin{figure}
   \centering
   \includegraphics[width=.8\textwidth]{communication}
-  \caption{Stackoverflow Fragen Frontend-Frameworks.}
+  \caption{REST-APIs vs. WebSockets}
   \label{fig:communication}
   \vspace{-0.3cm}
   \begin{center}
@@ -413,9 +413,106 @@ Dies ist besonders nützlich für Anwendungen wie Chats, Multiplayer-Games.
 
 \section{Die GLS Quiz App}
 \subsection{Ist-Zustand der App}
+
+Die GLS Quiz App bietet mehrere Modi und eine Punktzahlberechnung,
+die von der Antwortzeit abhängt.
+Für jede Frage gibt es mehrere Antwortmöglichkeiten,
+die zufällig angezeigt werden.
+Auch die Fragen werden dabei in zufälliger Reihenfolge gestellt.
+Der Nutzer erhält maximal 100 Punkte pro Frage,
+die bei schneller Antwort (innerhalb von 20 Sekunden) vollständig gewertet wird,
+wobei die Punkte mit ablaufender Zeit (−1 Punkt pro Sekunde) sinken.
+Es gibt verschiedene Modi, darunter das Zustellungsquiz,
+das Allgemeine Quiz und den Rapid Modus, bei dem die Punktabzüge nach 5 Sekunden beginnen.
+Im folgenden wird sich nur mit dem Zustellungsquiz beschäftigt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.8\textwidth]{gls-trainee}
+  \caption{GLS Zustellquiz}
+  \label{fig:gls-trainee}
+\end{figure}
+
+Nach dem Beantworten der Fragen zeigt die App am Ende eine Auswertung.
+Diese enthält eine Auflistung der erreichten Punkte, welche Antworten gewählt wurden, und welche korrekt gewesen wären.
+Je nach Punktestand gibt es ein angepasstes Feedback, z.B. “Du musst noch ein bisschen üben…”.
+Zudem existiert eine Bestenliste pro Modus.
+
+Die App nutzt HTML, CSS und JavaScript im Frontend und speichert die Bestenliste in Amazon AWS DynamoDB.
+Änderungen und Aktualisierungen in der App erfolgen über den Austausch von HTML-Elementen durch JavaScript.
+Die Fragen sind in einer JavaScript-Datei hinterlegt und einsehbar.
+Ein Teil der App-Komponenten wurde modularisiert,
+doch es besteht weiterhin doppelter Code und die Dateien sind teils sehr groß.
+
 \subsection{Ursprüngliches Konzept}
+
+Wie bereits in der Einleitung angerissen basierte das ursprüngliche Konzept der App auf einem analogen Quiz,
+das einen Zustelltag simulierte.
+In dieser Version mussten die Nutzer eine feste Route mit verschiedenen Stopps abarbeiten.
+Die Fragen waren an eine feste Position auf einer Karte gebunden und hatten Namen wie „Stopp: David“,
+um eine reale Zustellsituation nachzubilden.
+Die Reihenfolge der Fragen war nicht zufällig, sondern folgte der Route, ähnlich wie bei einer Auslieferung.
+
+Ziel der GLS-Quiz App war es, die analoge Version zu digitalisieren.
+
 \subsection{Probleme bei der Umsetzbarkeit des ursprünglichen Konzepts}
+
+Das Hauptproblem bei der Umsetzung war die Implementierung einer interaktiven Karte,
+die auswählbare Stopps für den Nutzer bietet.
+Dieses Features erwies sich als schwierig und konnte nicht einfach mit HTML, CSS und JavaScript realisiert werden.
+
 \subsection{Konzeptentwicklung zur Bewältigung der Herausforderungen}
+
+Die Hauptkriterien für die Neuentwicklung der App sind:
+\begin{itemize}
+  \item \textbf{Strukturierter Aufbau:} Ein strukturiertes Komponentensystem soll die Weiterentwicklung und Wiederverwendung von Code fördern.
+  \item \textbf{Sicherheit der Fragen:} Die Fragen sollen im Quelltext nicht einsehbar sein, um das Schummeln mit den Lösungen zu verhindern.
+  \item \textbf{Einfache Lernkurve:} Die App soll eine einfache Lernkurve haben, damit neue Studenten schnell in die Entwicklung einsteigen können.
+  \item \textbf{Einfache Map-Integration:} Eine einfache Integration von Kartenfunktionen soll gewährleistet sein.
+  \item \textbf{Leichtgewichtigkeit:} Die App soll leichtgewichtig sein, weil sie nur einen begrenzten Funktionsumfang hat.
+\end{itemize}
+
+Um die Herausforderungen zu lösen, wird eine Trennung zwischen Frontend und Backend eingeführt.
+So sollen die Fragen im Backend verborgen und dynamisch geladen werden.
+Somit ist die Sicherheit der Fragen für alle Kombination gewährleistet.
+Zur besseren Strukturierung des Codes sollen Frameworks verwendet werden, die einen modularen Aufbau und wiederverwendbare Komponenten ermöglichen.
+Im Frontend folgt zusätzlich die Integration von Karten zur Simulation der Zustellrouten.
+Dafür werden die jeweiligen Optionen der Frameworks für die Integration von Google Maps basierend auf der Einfachheit der Integration bepunktet,
+siehe @angular/google-maps, @react-google-maps/api und @fawmi/vue-google-maps.
+Alle anderen Kriterien werden mit dem Wissen aus dem Technologieüberblick bewertet.
+
+\begin{table}[h!]
+  \centering
+  \caption{Nutzwertanalyse der Frontend-Frameworks}
+  \label{tab:nutz-frontend}
+  \begin{tabular}{@{}lcccc@{}}
+    \toprule
+    \textbf{Kriterien} & \textbf{Gewichtung} & \textbf{Vue} & \textbf{React} & \textbf{Angular} \\ \midrule
+    \textbf{Lernkurve einfach} & 35\% & 4 & 3 & 1 \\ \midrule
+    \textbf{strukturierter Aufbau} & 25\% & 3 & 3 & 4 \\ \midrule
+    \textbf{Maps Integration} & 20\% & 3 & 2 & 4 \\ \midrule
+    \textbf{Leichtgewichtig} & 20\% & 4 & 3 & 2 \\ \midrule
+    \textbf{Summe} & 100\% & 3.5 & 2.8 & 2.6 \\ \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \caption{Nutzwertanalyse der Backend-Frameworks}
+  \label{tab:nutz-backend}
+  \begin{tabular}{@{}lcccc@{}}
+    \toprule
+    \textbf{Kriterien} & \textbf{Gewichtung} & \textbf{Spring} & \textbf{Express} & \textbf{Django} \\ \midrule
+    \textbf{Lernkurve einfach} & 35\% & 3 & 4 & 2 \\ \midrule
+    \textbf{strukturierter Aufbau} & 25\% & 4 & 3 & 3 \\ \midrule
+    \textbf{Leichtgewichtig} & 20\% & 2 & 4 & 3 \\ \midrule
+    \textbf{Summe} & 80\% & 3.05 & 3.8 & 2.65 \\ \bottomrule
+  \end{tabular}
+\end{table}
+
+Die beiden Tabellen \ref{tab:nutz-frontend} und \ref{tab:nutz-backend} zeigen die Nutzwertanalyse der Frontend- und Backend-Frameworks.
+Anhand der Gewichtung der Kriterien wird deutlich,
+dass Angular und Django die schlechtesten Werte erzielen und somit nicht für eine Umsetzung geeignet sind.
 
 \section{Test-Implementierung}
 
@@ -506,7 +603,7 @@ Die genauen Routen und ihre Definitionen sind im Anhang zu finden.
 
 \subsection{Ergebnisse und erlangtes Wissen}
 
-Folgende Tabelle fasst die wichtigsten Erkenntnisse aus der Implementierung zusammen:
+Folgende Tabellen fassen die wichtigsten Erkenntnisse aus der Implementierung zusammen:
 
 \begin{table}[h!]
   \centering
@@ -535,7 +632,7 @@ Folgende Tabelle fasst die wichtigsten Erkenntnisse aus der Implementierung zusa
 Zusammenfassend haben sich einige Vor- und Nachteile der verschiedenen Frameworks bestätigt.
 Zum Beispiel punktet Express durch seine Einfachheit und Flexibilität, während Django und Spring durch automatische Features überzeugen.
 
-Auf der Frontend-Seite hat sich gezeigt, dass Angular durch seine klare Trennung von HTML, CSS und TypeScript gut strukturiert ist,
+Auf der Frontend-Seite hat sich gezeigt, dass Angular durch seine klare Trennung von HTML, CSS und TypeScript gut strukturiert,
 jedoch schwieriger zu erlernen ist.
 React und Vue bieten einen einfacheren Einstieg.
 Vue kombiniert dabei die Vorteile von React und Angular.
@@ -547,9 +644,11 @@ und es liegt eher an den individuellen Anforderungen und Präferenzen des Entwic
 
 \section{Schlussfolgerung und Ausblick}
 
+React + Express
+
 \newpage
 \section{Anhang}
-\subsubsection{Implementierung}
+\subsection{Implementierung}
 
 \subsubsection{Komponenten}
 
