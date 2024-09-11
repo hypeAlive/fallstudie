@@ -29,7 +29,7 @@
     Analyse von Web Applikations-Technologien:
   \par
   }
-  {\Large\itshape Am Beispiel der Planung einer GLS Quiz App\par}
+  {\Large\itshape Am Beispiel der GLS Quiz App\par}
 
   \vspace{1cm}
 
@@ -69,17 +69,19 @@
   \acro{JS}{JavaScript}
   \acro{SPA}{Single Page Application}
   \acro{TS}{TypeScript}
-  \acro{CLI}{Command Line Interface}
   \acro{DOM}{Document Object Model}
   \acro{JSX}{JavaScript XML}
   \acro{API}{Application Programming Interface}
   \acro{REST}{Representational State Transfer}
   \acro{JSON}{JavaScript Object Notation}
+  \acro{SQL}{Structured Query Language}
+  \acro{HTTP}{Hypertext Transfer Protocol}
+  \acro{ID}{Identifier}
 \end{acronym}
 \newpage
 
 \section{Einleitung}
-Diese Fallstudie mit dem Titel „Analyse von Web Applikations-Technologien: Am Beispiel der Planung einer GLS Quiz App“
+Diese Fallstudie mit dem Titel „Analyse von Web Applikations-Technologien: Am Beispiel der GLS Quiz App“
 wurde im Fachbereich Angewandte Informatik von Nicolas Fritz im Unternehmen GLS Germany GmbH & Co. OHG erstellt.
 Die Betreuung im Unternehmen erfolgte durch Patrick Weppler für den technischen Teil und Laura Alles für den konzeptionellen Teil.
 An der Hochschule wurde die Arbeit von Prof. Dr. Birgit Bomsdorf betreut.
@@ -113,14 +115,14 @@ Gleichzeitig müssen einfache Erweiterungsmöglichkeiten gewährleistet sein.
 
 \subsection{Ziel der Fallstudie}
 
-Das Ziel dieser Fallstudie besteht darin, ein grundlegendes Verständnis moderner Technologien zu schaffen,
-diese zu vergleichen und wesentliche Begriffe zu klären.
-Unter anderm soll das Zusammenspiel verschiedener Komponenten innerhalb einer Web-Anwendung verstanden werden.
+Das Ziel dieser Fallstudie besteht darin,
+ein grundlegendes Verständnis moderner Web-Technologien zu schaffen und wesentliche Begriffe zu klären.
+Unter anderem soll das Zusammenspiel der 2 Hauptkomponenten innerhalb einer \ac{WebApp} verstanden werden.
 Gesammeltes Wissen wird für das Verständnis und Verbesserung der GLS Quiz App genutzt.
 Die Fallstudie bietet einen Überblick über die relevantesten Technologien,
 vergleicht diese beispielsweise hinsichtlich der Lernkurve
 und beantwortet die Frage,
-wie eine fundierte Entscheidung über die geeignete Technologiekombination für eine Anwendung getroffen werden kann,
+wie eine fundierte Entscheidung über die geeignete Technologiekombination für eine Webanwendung getroffen werden kann,
 am Beispiel der GLS-Quiz App.
 
 \subsection{Methodik und Vorgehensweise}
@@ -128,7 +130,7 @@ am Beispiel der GLS-Quiz App.
 \begin{enumerate}
   \item \textbf{Dokumentenanalyse:} Untersuchung von vorhandenen Dokumentationen und Vergleichen zwischen Technologien.
   \item \textbf{Trendanalyse:} Berücksichtigung aktueller Trends im Frontend-Bereich.
-  \item \textbf{Nutzungsanalyse:} Untersuchung, welche Backend-Technologien von großen Unternehmen eingesetzt werden.
+  \item \textbf{Nutzungsanalyse:} Untersuchung, welche Backend-Technologien von Unternehmen eingesetzt werden.
   \item \textbf{Nutzwertanalyse:} Bewertung der gesammelten Daten anhand festgelegter Kriterien.
   \item \textbf{Testimplementierung:}
   \begin{itemize}
@@ -139,22 +141,23 @@ am Beispiel der GLS-Quiz App.
 \end{enumerate}
 
 \section{Technologieüberblick}
-Um die Entwicklung einer WebApp wie der GLS Quiz App besser zu verstehen,
+\label{sec:tec-überblick}
+Um die Entwicklung einer \ac{WebApp} wie der GLS Quiz App besser zu verstehen,
 ist es wichtig, die zugrunde liegenden Technologien zu kennen.
 
 \\
 
 Im folgenden Abschnitt werden die Grundlagen geschaffen,
 moderne Technologien aufgezeigt und verglichen.
-Zusätzlich wird die Zusammenarbeit der wichtigsten Komponenten einer WebApp aufgezeigt.
+Zusätzlich wird die Zusammenarbeit der wichtigsten Komponenten einer \ac{WebApp} aufgezeigt.
 
 \subsection{Überblick über moderne Webtechnologien}
 \label{sec:moderne-webtechnologien}
 
-Um eine WebApp oder Website zu verstehen oder entwickeln zu können, ist es wichtig, die zugrunde liegende Struktur zu kennen.
+Um eine \ac{WebApp} oder Website zu verstehen oder entwickeln zu können, ist es wichtig, die Struktur zu kennen.
 Eine wesentliche Unterscheidung ist dabei die zwischen Frontend und Backend.
 
-Das Frontend bezeichnet hierbei den sichtbaren Teil einer WebApp, den der Nutzer direkt erleben kann. \cite{CMSRev}
+Das Frontend bezeichnet hierbei den sichtbaren Teil einer \ac{WebApp}, den der Nutzer direkt erleben kann. \cite{CMSRev}
 Anders gesagt ist es das \ac{GUI} einer Anwendung.
 Es umfasst alles, was auf dem Bildschirm angezeigt wird, einschließlich Gestaltung und Interaktion.
 Das Frontend besteht aus den drei grundlegenden Technologien \ac{HTML}, \ac{CSS} und \ac{JS}.
@@ -167,7 +170,7 @@ Die mit \ac{HTML} definierten Elemente werden hiermit gestaltet, also zum Beispi
 \textbf{\ac{JS}} ist für die Interaktion zuständig.
 Alles was nicht mittels \ac{HTML} und \ac{CSS} umgesetzt werden kann, wird mit \ac{JS} realisiert.
 
-Ein Frontend für eine WebApp besteht typischerweise aus diesen 3 Technologien oder Abwandlungen dieser. \cite{CoU}
+Ein Frontend für eine \ac{WebApp} besteht typischerweise aus diesen 3 Technologien oder Abwandlungen dieser. \cite{CoU}
 Der Grund dafür ist, dass der Browser nur diese Sprachen versteht und sie für die Benutzer interpretiert.
 Das ist der Grund dafür, dass diese Sprachen auch als \texttt{clientseitige} Sprachen bezeichnet werden.
 
@@ -184,8 +187,8 @@ Eine Besonderheit besteht darin, dass auch \ac{JS} serverseitig verwendet werden
 
 \\
 
-Doch wie bereits erwähnt reicht eine Sprache nicht aus, um eine WebApp zu entwickeln.
-Heutige WebApps sind komplexer und benötigen daher sogenannte Frameworks.
+Doch wie bereits erwähnt reicht eine Sprache nicht aus, um eine \ac{WebApp} zu entwickeln.
+Heutige \ac{WebApp}s sind komplexer und benötigen daher sogenannte Frameworks.
 Eine Definition der Rock the Prototype Seite lautet: \\
 \begin{minipage}{\textwidth}
   \textit{
@@ -206,7 +209,7 @@ Eine Definition der Rock the Prototype Seite lautet: \\
 Also bedeutet das,
 dass Frameworks den Entwicklungsprozess durch die Bereitstellung von Standardlösungen und wiederverwendbarem Code beschleunigen.
 Entwickler können auf diese vorgefertigten Komponenten zurückgreifen,
-um wiederkehrende Aufgaben zu automatisieren und sich auf die individuellen Anforderungen ihrer WebApp zu konzentrieren.
+um wiederkehrende Aufgaben zu automatisieren und sich auf die individuellen Anforderungen ihrer \ac{WebApp} zu konzentrieren.
 Frameworks helfen dabei, die Komplexität zu bewältigen,
 indem sie eine strukturierte Basis bieten, auf der Entwickler ihre spezifischen Funktionen aufbauen können.
 
@@ -233,23 +236,24 @@ liefert jedoch eine grobe Orientierung darüber, welche Technologien Entwickler 
 \subsubsection{Vue}
 Vue.js wurde 2014 von Evan You entwickelt und ist das jüngste der 3 Frameworks. \cite{AmD}
 Es basiert auf der Idee einer \ac{SPA}, also einer Anwendung, die nur eine Seite lädt und dann dynamisch aktualisiert. \cite{BStack}
-Der Vorteil an einer solchen WebApp ist, dass sie schneller und flüssiger läuft, da nicht bei jedem Klick die Seite neu geladen werden muss.
+Der Vorteil an einer solchen \ac{WebApp} ist, dass sie schneller und flüssiger läuft,
+da nicht bei jedem Klick die Seite neu geladen werden muss.
 Vue wurde entwickelt, um die besten Teilaspekte von Angular zu übernehmen und gleichzeitig die Komplexität zu reduzieren.
 
 Die neueste Version, Vue 3,
 wurde 2020 veröffentlicht und bringt signifikante Verbesserungen und neue Funktionen mit sich. \cite{vue}
 Zudem unterstützt Vue 3 die TypeScript-Integration besser, was die Typisierung und Wartung des Codes erleichtert.
-\ac{TS} ist eine Programmiersprache, die auf JavaScript aufbaut und zusätzliche Funktionen wie Typisierung und Klassen bietet. \cite{ts}
+\ac{TS} ist eine Programmiersprache, die auf \ac{JS} aufbaut und zusätzliche Funktionen wie Typisierung und Klassen bietet. \cite{ts}
 Somit wird der Code sicherer und einfacher zu warten.
 
 \Cref{fig:fetrends} lässt darauf schließen,
 dass Vue mit Vue.js und Vue3 im Vergleich zu Angular und React weniger populär ist.
 Dennoch ist es eindeutig auf Platz 3.
 Zu erkennen ist ein Abfall der Fragen von VueJS und ein Anstieg von Vue 3, was den Versionswechsel verdeutlicht.
-Dieser zieht sich aber eher hin und geht langsam voran.
+Dieser zieht sich aber eher in die Länge und geht langsam voran.
 
 Eines der Vorteile von Vue ist, dass es eine sehr kurze Lernkurve hat. \cite{Dev}
-Im Vergleich zu anderen Frameworks wie Angular oder React,
+Im Vergleich zu anderen Frameworks wie Angular,
 ist Vue sehr anfängerfreundlich und benötigt nicht viele Vorkenntnisse.
 Trotzdem ist es sehr leistungsstark und kann auch für größere Projekte verwendet werden.
 Außerdem ist Vue sehr klein und verhindert somit, dass die Seite lange zum Laden benötigt.
@@ -270,7 +274,7 @@ Seit 2023 ist ein Anstieg der Anzahl an Fragen zu Angular zu beobachten,
 was auf ein wieder wachsendes Interesse hindeutet.
 
 Angular wurde von Google entwickelt und basiert auf \ac{TS}. \cite{NG}
-Dabei ist es ein muss, TypeScript zu verwenden, da Angular kein JavaScript unterstützt.
+Dabei ist es ein muss, \ac{TS} zu verwenden, da Angular kein JavaScript unterstützt.
 Meist werden auch \ac{SPA}s mit Angular entwickelt werden, es ist jedoch auch möglich, mehrseitige Anwendungen zu erstellen.
 
 Ein großer Vorteil von Angular ist, dass es sehr Zukunftssicher ist. \cite{BStack}
@@ -281,7 +285,7 @@ Es eignet sich perfekt für große Projekt, da die Projektstruktur konsistenz un
 Ein Nachteil ist jedoch, dass Angular sehr komplex ist und eine lange Einarbeitungszeit benötigt. \cite{BStack}
 Dadurch ist es weniger für Anfänger geeignet und benötigt mehr Vorkenntnisse.
 Auch die Ladezeit einer Seite ist länger, da Angular sehr groß ist und viele Funktionen mitbringt.
-Bei großen WebApps spielt das weniger eine Rolle, aber bei kleinen WebApps ist das von Nachteil.
+Bei großen \ac{WebApp}s spielt das weniger eine Rolle, aber bei kleinen \ac{WebApp}s ist das von Nachteil.
 
 \subsubsection{React}
 
@@ -303,7 +307,7 @@ auch mobile Apps zu entwickeln und somit den Code zu teilen. \cite{RCTN}
 Mit dem Vorteil der Größe folgt jedoch auch ein Nachteil. \cite{BStack}
 Durch die Größe und Beliebtheit von React ist das Tempo der Weiterentwicklung sehr hoch,
 was Entwickler zwingt, sich ständig mit neuen Konzepten auseinanderzusetzen.
-Zudem verwendet React \ac{JSX}, ein spezielles Format, um \ac{HTML} in JavaScript zu schreiben. \cite{JSX}
+Zudem verwendet React \ac{JSX}, ein spezielles Format, um \ac{HTML} in \ac{JS} zu schreiben. \cite{JSX}
 Für Anfänger kann \ac{JSX} ungewohnt sein und eine gewisse Einarbeitungszeit erfordern.
 
 \subsection{Backend-Technologien im Vergleich: Express, Springboot und Django}
@@ -312,7 +316,7 @@ Nachdem wir uns mit den Frontend-Technologien beschäftigt haben, werfen wir nun
 Dabei werden wir uns Express, Springboot und Django genauer ansehen.
 
 16.982.234 Unternehmen nutzen laut enlyft.com Software Frameworks -
-Darunter auch die Vorgestellten.
+Darunter auch die Vorgestellten. \cite{eft}
 Für Express fand enlyft.com 119.736 Unternehmen, für Django 37.230 und für Spring nur 138.
 Die Zahlen zeigen, dass Express und Django deutlich beliebter sind als Spring.
 Natürlich beziehen sich diese Zahlen nur auf eine begrenzte Anzahl von Unternehmen und sind nicht repräsentativ.
@@ -321,21 +325,21 @@ Dennoch geben sie einen groben Überblick über die Beliebtheit der Frameworks a
 \subsubsection{Express}
 
 Wie bereits erwähnt, kann \ac{JS} auch serverseitig verwendet werden.
-Dies wird durch die Nutzung von Node.js ermöglicht, wodurch JavaScript auch außerhalb des Browsers eingesetzt werden kann.
+Dies wird durch die Nutzung von Node.js ermöglicht, wodurch \ac{JS} auch außerhalb des Browsers eingesetzt werden kann. \cite{MED}
 Express ist ein populäres Framework, das auf Node.js aufbaut.
 
 Express zeichnet sich besonders durch seine Einfachheit und Benutzerfreundlichkeit aus,
-was es ideal für schnelle und unkomplizierte Lösungen macht.
+was es ideal für schnelle und unkomplizierte Lösungen macht. \cite{EiA}
 
-Ein großer Vorteil von JavaScript ist,
+Ein großer Vorteil von \ac{JS} ist,
 dass Entwickler sowohl das Frontend als auch das Backend in derselben Sprache entwickeln können,
 ohne eine neue Sprache erlernen zu müssen.
-Javascript ist jedoch eine untypisierte Sprache.
+\ac{JS} ist jedoch eine untypisierte Sprache.
 Fehler können oft erst zur Laufzeit entdeckt werden, was im Backendbereich,
 wo Sicherheit und Stabilität von großer Bedeutung sind, problematisch sein kann.
-Typescript bietet hier eine Lösung, indem es Typisierung einführt, während es nahtlos mit Express integriert werden kann.
+\ac{TS} bietet hier eine Lösung, indem es Typisierung einführt, während es nahtlos mit Express integriert werden kann. \cite{EX}
 
-Allerdings bringt die Leichtgewichtigkeit und Flexibilität von Express auch einige Nachteile mit sich.
+Allerdings bringt die Leichtgewichtigkeit und Flexibilität von Express auch einige Nachteile mit sich. \cite{EiA}
 Es fehlen integrierte Funktionen, die andere, umfangreichere Frameworks bieten,
 wie z.B. Datenbankintegration, Sicherheitsfunktionen oder Authentifizierungsmechanismen.
 Diese müssen in Express durch zusätzliche Module ergänzt werden,
@@ -344,21 +348,21 @@ was zusätzlichen Zeitaufwand erfordert und eine sorgfältige Verwaltung der Abh
 \subsubsection{Springboot}
 
 Spring Boot ist ein leistungsstarkes Framework für die Backend Entwicklung in Java,
-das auf dem bewährten Spring Framework basiert.
+das auf dem bewährten Spring Framework basiert. \cite{MED}
 Es vereinfacht die Entwicklung erheblich, indem es den Ansatz “Convention over Configuration” verfolgt.
 Das bedeutet, dass viele Konfigurationen automatisch übernommen werden,
 was den typischen Boilerplate-Code durch Java reduziert und den Entwicklern ermöglicht,
 sich auf die wesentlichen Teile ihrer Anwendung zu konzentrieren.
 
 Viele wichtige Funktionen, wie die Integration von Datenbanken oder Sicherheitsfunktionen,
-werden von Spring Boot direkt unterstützt.
+werden von Spring Boot direkt unterstützt. \cite{SPR}
 Dies bedeutet, dass Entwickler nicht auf Drittanbieter-Bibliotheken zurückgreifen müssen,
 um grundlegende Funktionalitäten zu implementieren.
 
-Ein Beispiel dafür, wie Spring Boot die Entwicklung erleichtert, ist die automatische Konvertierung von Java-Klassen in JSON-Objekte.
-So können Entwickler einfach Java-Objekte erstellen und diese direkt an den Client senden, ohne sich um die Konvertierung kümmern zu müssen.
+Ein Beispiel dafür, wie Spring Boot die Entwicklung erleichtert, ist die automatische Konvertierung von Java-Klassen in \ac{JSON}.
+So können Entwickler einfach Objekte erstellen und diese direkt an den Client senden, ohne sich um die Konvertierung kümmern zu müssen.
 
-Solche Funktionen machen Spring Boot beliebt, aber diese vermeindliche Magie hat auch Nachteile.
+Solche Funktionen machen Spring Boot beliebt, aber diese vermeindliche Magie hat auch Nachteile. \cite{EiA}
 Die Automatisierungen können dazu führen, dass Entwickler nicht verstehen, was im Hintergrund passiert.
 Somit steigt auch die Lernkurve, da es sehr aufwendig sein kann, sich in die genauen Funktionsweisen einzuarbeiten.
 Darüber hinaus kann die Komplexität von Spring Boot bei kleineren Projekten zu zusätzlicher Rechneleistung führen, die genutzt, aber nicht benötigt wird.
@@ -367,19 +371,19 @@ Darüber hinaus kann die Komplexität von Spring Boot bei kleineren Projekten zu
 
 Django basiert auf Python und zeichnet sich, ähnlich wie Spring, dadurch aus,
 dass es alle notwendigen Komponenten für die Entwicklung einer Webanwendung bereits integriert hat.
-Dies vereinfacht den Entwicklungsprozess erheblich.
+Dies vereinfacht den Entwicklungsprozess erheblich. \cite{MED}
 
 Ein besonders markantes Merkmal von Django ist das automatisch generierte Admin-Interface.
 Dieses erleichtert die Verwaltung von Datenbanken erheblich und spart Entwicklern viel Zeit und Arbeit,
-da sie keine eigene Verwaltungsoberfläche entwickeln müssen.
+da sie keine eigene Verwaltungsoberfläche entwickeln müssen. \cite{DJO}
 
 Darüber hinaus bietet Django standardmäßig umfangreiche Sicherheitsmechanismen,
-wie z.B. den Schutz gegen SQL-Injections, ein Angriff auf die Datenbank.
+wie z.B. den Schutz gegen \ac{SQL}-Injections, ein Angriff auf die Datenbank.
 Dadurch können Entwickler sichere Anwendungen erstellen,
 ohne sich um viele der typischen Sicherheitslücken kümmern zu müssen.
 
 Ein Nachteil von Django ist jedoch,
-dass das Framework sehr strikt aufgebaut ist und wenig Flexibilität bietet.
+dass das Framework sehr strikt aufgebaut ist und wenig Flexibilität bietet. \cite{MED}
 Diese Striktheit kann in einigen Projekten als Einschränkung empfunden werden,
 insbesondere wenn besondere Anpassungen erforderlich sind.
 Darüber hinaus hat Django eine eher steile Lernkurve, insbesondere für Entwickler, die noch nicht mit Python vertraut sind.
@@ -387,10 +391,10 @@ Darüber hinaus hat Django eine eher steile Lernkurve, insbesondere für Entwick
 \subsection{Wie arbeiten Backend und Frontend zusammen?}
 
 Es gibt mehrere Möglichkeiten, wie das Backend mit dem Frontend kommunizieren kann.
-Zwei der gängigsten Methoden sind REST-APIs und WebSocket-Server.
-Beide basieren auf HTTP, ein Protokoll, das die Kommunikation zwischen Server und Client ermöglicht.
-Während REST-APIs in den meisten klassischen Webanwendungen für den Datenaustausch verwendet werden,
-sind WebSockets besonders für Echtzeitanwendungen von großer Bedeutung.
+Zwei der gängigsten Methoden sind \ac{REST}-\ac{API}s und WebSocket-Server.
+Beide basieren auf \ac{HTTP}, ein Protokoll, das die Kommunikation zwischen Server und Client ermöglicht.
+Während \ac{REST}-\ac{API}s in den meisten klassischen \ac{WebApp}s für den Datenaustausch verwendet werden,
+sind WebSockets besonders für Echtzeitanwendungen von großer Bedeutung. \cite{ReSock}
 
 \begin{figure}
   \centering
@@ -403,10 +407,10 @@ sind WebSockets besonders für Echtzeitanwendungen von großer Bedeutung.
   \end{center}
 \end{figure}
 
-\Cref{fig:communication} zeigt den grundlegenden Unterschied zwischen REST-APIs (unten) und WebSockets (oben).
+\Cref{fig:communication} zeigt den grundlegenden Unterschied zwischen \ac{REST}-\ac{API}s (unten) und WebSockets (oben).
 
-REST-APIs basieren auf dem klassischen Anfrage-Antwort-Modell.
-Das Frontend sendet eine HTTP-Anfrage an das Backend und erhält eine Antwort in Form von JSON oder einem anderen Format zurück.
+\ac{REST}-\ac{API}s basieren auf dem klassischen Anfrage-Antwort-Modell.
+Das Frontend sendet eine \ac{HTTP}-Anfrage an das Backend und erhält eine Antwort in Form von \ac{JSON} oder einem anderen Format zurück.
 
 WebSockets hingegen ermöglichen eine Echtzeit-Kommunikation.
 Sobald eine Verbindung zwischen dem Client (Frontend) und dem Server (Backend) hergestellt ist,
@@ -421,7 +425,7 @@ Wir lernen sie näher kennen, zeigen ihre Probleme auf und kombinieren das berei
 \subsection{Ist-Zustand der App}
 
 Die GLS Quiz App bietet mehrere Modi und eine Punktzahlberechnung,
-die von der Antwortzeit abhängt.
+die von der Antwortzeit abhängt. \cite{GLSQ}
 Für jede Frage gibt es mehrere Antwortmöglichkeiten,
 die zufällig angezeigt werden.
 Auch die Fragen werden dabei in zufälliger Reihenfolge gestellt.
@@ -444,9 +448,9 @@ Diese enthält eine Auflistung der erreichten Punkte, welche Antworten gewählt 
 Je nach Punktestand gibt es ein angepasstes Feedback, z.B. “Du musst noch ein bisschen üben…”.
 Zudem existiert eine Bestenliste pro Modus.
 
-Die App nutzt reines HTML, CSS und JavaScript im Frontend und speichert die Bestenliste in Amazon AWS DynamoDB.
-Änderungen und Aktualisierungen in der App erfolgen über den Austausch von HTML-Elementen durch JavaScript.
-Die Fragen sind in einer JavaScript-Datei hinterlegt und einsehbar.
+Die App nutzt reines \ac{HTML}, \ac{CSS} und \ac{JS} im Frontend und speichert die Bestenliste in Amazon AWS DynamoDB. \cite{GLSQS}
+Änderungen und Aktualisierungen in der \ac{WebApp} erfolgen über den Austausch von \ac{HTML}-Elementen durch \ac{JS}.
+Die Fragen sind in einer \ac{JS}-Datei hinterlegt und einsehbar.
 Ein Teil der App-Komponenten wurde modularisiert,
 doch es besteht weiterhin doppelter Code und die Dateien sind teils sehr groß.
 
@@ -465,7 +469,7 @@ Ziel der GLS-Quiz App war es, die analoge Version zu digitalisieren.
 
 Das Hauptproblem bei der Umsetzung war die Implementierung einer interaktiven Karte,
 die auswählbare Stopps für den Nutzer bietet.
-Dieses Features erwies sich als schwierig und konnte nicht einfach mit HTML, CSS und JavaScript realisiert werden.
+Dieses Features erwies sich als schwierig und konnte nicht einfach mit \ac{HTML}, \ac{CSS} und \ac{JS} realisiert werden.
 
 \subsection{Konzeptentwicklung zur Bewältigung der Herausforderungen}
 
@@ -484,8 +488,8 @@ Somit ist die Sicherheit der Fragen für alle Kombination gewährleistet.
 Zur besseren Strukturierung des Codes sollen Frameworks verwendet werden, die einen modularen Aufbau und wiederverwendbare Komponenten ermöglichen.
 Im Frontend folgt zusätzlich die Integration von Karten zur Simulation der Zustellrouten.
 Dafür werden die jeweiligen Optionen der Frameworks für die Integration von Google Maps basierend auf der Einfachheit der Integration bepunktet,
-siehe @angular/google-maps, @react-google-maps/api und @fawmi/vue-google-maps.
-Alle anderen Kriterien werden mit dem Wissen aus dem Technologieüberblick bewertet.
+siehe @angular/google-maps \cite{ngMaps}, @react-google-maps/api \cite{rctMaps} und @fawmi/vue-google-maps \cite{vueMaps}.
+Alle anderen Kriterien werden mit dem Wissen aus dem \hyperref[sec:tec-überblick]{\textit{Technologieüberblick}} bewertet.
 
 \begin{table}[h!]
   \centering
@@ -522,7 +526,7 @@ dass Angular und Django die schlechtesten Werte erzielen und somit nicht für ei
 
 \section{Test-Implementierung}
 
-Um das Verständnis zu vertiefen und die Bewertung der Technologien im Bezug auf die GLS-Quiz-App zu erleichtern,
+Um das Verständnis zu vertiefen und die Bewertung der Technologien im Bezug auf die GLS-Quiz App zu erleichtern,
 wird in diesem Abschnitt ein Demo Projekt vorgestellt.
 
 Das Hauptziel besteht darin,
@@ -544,7 +548,7 @@ Nach der Bestätigung erhält der Nutzer eine Rückmeldung,
 ob seine Antwort richtig oder falsch war.
 Es ist sicherzustellen, dass der Nutzer nicht durch Einsicht in den Quelltext der App die korrekten Antworten herausfinden kann.
 
-Das Frontend ist ausschließlich für die visuelle Darstellung der App zuständig.
+Das Frontend ist ausschließlich für die visuelle Darstellung der \ac{WebApp} zuständig.
 Es zeigt die Fragen, die Antwortmöglichkeiten und das Ergebnis der Beantwortung an.
 
 Das Backend fungiert als \ac{REST}-\ac{API} und ist verantwortlich für die Bereitstellung der Fragen und die Überprüfung der Antworten.
@@ -553,13 +557,13 @@ Stattdessen soll das Backend auf eine einfache Methode zurückgreifen, wie zum B
 
 \subsection{Umsetzung}
 
-Das gesamte Projekt mit zusätzlichen Informationen und Code ist auf GitHub unter folgendem Link verfügbar: https://github.com/hypeAlive/fallstudie-impl.git.
-Für jedes Backend und Frontend ist die wichtigste Code-Datei im Anhang enthalten.
+Das gesamte Projekt mit zusätzlichen Informationen und Code ist auf GitHub unter folgendem Link verfügbar: https://github.com/hypeAlive/fallstudie-impl. \cite{fImpl}
+Für jedes Backend und Frontend ist die wichtigste Code-Datei im \hyperref[sec:anhang]{\textit{Anhang}} enthalten.
 Im Backend handelt es sich um die Routendefinition und im Frontend um die QuestionComponent.
 
 \subsubsection{Frontend}
 
-Für das Design kommt TailwindCSS zusammen mit der Bibliothek daisyUI zum Einsatz,
+Für das Design kommt Tailwind\ac{CSS} zusammen mit der Bibliothek daisyUI zum Einsatz,
 um das Layout und die Komponenten zu gestalten.
 
 Die Hauptkomponente ist immer sichtbar und enthält sämtliche Routen.
@@ -572,9 +576,9 @@ die unter der Route / erreichbar ist, zeigt einen Button mit der Aufschrift “S
 Durch einen Klick auf diesen Button wird der Benutzer auf die Route /question weitergeleitet,
 die das eigentliche Quiz beinhaltet.
 
-Die Quiz-Seite (im Code bezeichnet als QuestionComponent) fragt beim ersten Laden alle verfügbaren ids an Fragen vom Backend ab.
-Sobald die IDs verfügbar sind,
-wählt das Frontend zufällig eine ID aus und fragt die dazugehörige Frage und deren Antwortmöglichkeiten vom Backend ab.
+Die Quiz-Seite (im Code bezeichnet als QuestionComponent) fragt beim ersten Laden alle verfügbaren \ac{ID}s an Fragen vom Backend ab.
+Sobald die \ac{ID}s verfügbar sind,
+wählt das Frontend zufällig eine \ac{ID} aus und fragt die dazugehörige Frage und deren Antwortmöglichkeiten vom Backend ab.
 Diese Informationen werden dann auf der Seite angezeigt.
 
 \begin{figure}
@@ -594,8 +598,8 @@ Nach dieser Überprüfung ändert sich die Funktion des Buttons, und ermöglicht
 
 \subsubsection{Backend}
 
-Das Backend sendet und empfängt JSON-Daten.
-Außderdem hat es eine simulierte Datenbank, die in Form einer JSON-Datei vorliegt.
+Das Backend sendet und empfängt \ac{JSON}-Daten.
+Außderdem hat es eine simulierte Datenbank, die in Form einer \ac{JSON}-Datei vorliegt.
 Diese Datei wird beim Start des Backends einmalig geladen.
 
 Backends sind durch Routen definiert, die bestimmte Endpunkte bereitstellen.
@@ -633,7 +637,7 @@ Folgende Tabellen fassen die wichtigsten Erkenntnisse aus der Implementierung zu
 Zusammenfassend haben sich einige Vor- und Nachteile der verschiedenen Frameworks bestätigt.
 Zum Beispiel punktet Express durch seine Einfachheit und Flexibilität, während Django und Spring durch automatische Features überzeugen.
 
-Auf der Frontend-Seite hat sich gezeigt, dass Angular durch seine klare Trennung von HTML, CSS und TypeScript gut strukturiert,
+Auf der Frontend-Seite hat sich gezeigt, dass Angular durch seine klare Trennung von \ac{HTML}, \ac{CSS} und \ac{TS} gut strukturiert,
 jedoch schwieriger zu erlernen ist.
 React und Vue bieten einen einfacheren Einstieg.
 Vue kombiniert dabei die Vorteile von React und Angular.
@@ -645,10 +649,50 @@ und es liegt eher an den individuellen Anforderungen und Präferenzen des Entwic
 
 \section{Schlussfolgerung und Ausblick}
 
-React + Express
+In dieser Fallstudie wurde ein umfassender Überblick über moderne Webtechnologien gegeben
+und deren Eignung in Bezug auf die GLS Quiz App analysiert.
+Die Untersuchung umfasste sowohl drei Frontend- als auch drei Backend-Frameworks,
+wobei die Kriterien Lernkurve, Struktur, Integration von Karten und Leichtgewichtigkeit im Vordergrund standen.
+Es wurden grundlegende Begriffe und Konzepte zur Zusammenarbeit vorgestellt, wie \ac{SPA}s, \ac{REST}-\ac{API}s und WebSockets.
+
+Die Nutzwertanalyse zeigte, dass Vue und React im Frontend-Bereich die besten Ergebnisse erzielten,
+während Angular aufgrund seiner Komplexität und steilen Lernkurve weniger geeignet erschien.
+Im Backend-Bereich überzeugten Express und Spring durch ihre einfachere Lernkurve,
+während Django ein Mittelmaß aller Kriterien darstellte.
+
+Die Testimplementierung bestätigte diese Ergebnisse und zeigte,
+dass die Wahl der Kombination von Frontend- und Backend-Frameworks nicht entscheidend für den Erfolg der Implementierung ist.
+Vielmehr hängt der Erfolg von den spezifischen Anforderungen und Präferenzen des Entwicklers ab.
+Zusätzlich wurde deutlich, dass generell jede Wahl möglich ist,
+aber die Vorteile und Nachteile der jeweiligen Technologie dennoch große Auswirkungen
+auf die Entwicklung und das Ergebnis haben können.
+
+Aus den Ergebnissen der Fallstudie lässt sich ableiten,
+dass Vue und Express die beste Kombination für die Entwicklung der GLS Quiz App darstellen.
+Diese Kombination bietet eine gute Balance zwischen Einfachheit, Flexibilität und Leistungsfähigkeit.
+Eine Option für das Frontend wäre auch React gewesen,
+da React eine größere Community hat und somit mehr Ressourcen und Unterstützung bietet.
+Da die GLS Quiz App jedoch einen relativ geringen Funktionsumfang hat, wiegt dieser Punkt weniger schwer.
+Bezüglich des Backends punktet Express vor allem durch den Fakt,
+dass es auf Node.js basiert und somit \ac{JS} sowohl im Frontend als auch im Backend verwendet werden kann.
+
+Zukünftig sollte die Entwicklung der GLS Quiz App weiter vorangetrieben werden,
+indem die gewonnenen Erkenntnisse aus dieser Fallstudie genutzt werden.
+Es ist wichtig, dass, wenn das ursprüngliche Konzept umgesetzt oder die Anwendung weiterentwickelt werden soll,
+auf genannte Technologien gesetzt wird.
+
+Anhand der Entscheidung am Beispiel der GLS Quiz App wurde deutlich,
+wie bei der Auswahl von Technologien vorzugehen ist.
+Es zeigte sich, dass grundsätzlich viele Optionen möglich sind,
+jedoch die spezifischen Anforderungen und Ziele des Projekts entscheidend sind.
+Die Vor- und Nachteile der verschiedenen Technologien müssen sorgfältig abgewogen werden.
+Ein minimaler Prototyp ist dabei definitiv den Zeitaufwand wert, da er hilft,
+die Technologien besser zu verstehen und die richtige Wahl zu treffen.
+Dies ermöglicht eine fundierte Entscheidung und trägt maßgeblich zum Erfolg des Projekts bei.
 
 \newpage
 \section{Anhang}
+\label{sec:anhang}
 \subsection{Implementierung}
 
 \subsubsection{Komponenten}
