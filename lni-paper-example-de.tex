@@ -11,6 +11,8 @@
 \usepackage{acronym}
 \usepackage{hyperref}
 
+\usepackage{calligra}
+
 %% Sietenzahlen
 \pagestyle{fancy}
 \fancyhf{}
@@ -523,6 +525,7 @@ Alle anderen Kriterien werden mit dem Wissen aus dem \hyperref[sec:tec-überblic
 Die beiden Tabellen \ref{tab:nutz-frontend} und \ref{tab:nutz-backend} zeigen die Nutzwertanalyse der Frontend- und Backend-Frameworks.
 Anhand der Gewichtung der Kriterien wird deutlich,
 dass Angular und Django die schlechtesten Werte erzielen und somit nicht für eine Umsetzung geeignet sind.
+\newpage
 
 \section{Test-Implementierung}
 
@@ -691,6 +694,61 @@ die Technologien besser zu verstehen und die richtige Wahl zu treffen.
 Dies ermöglicht eine fundierte Entscheidung und trägt maßgeblich zum Erfolg des Projekts bei.
 
 \newpage
+\section{Glossar}
+
+\begin{description}
+  \item[Software:] Programme, Skripte oder Anwendungen
+
+  \item[Webanwendung:] Anwendung, die über einen Browser erreichbar ist. Beispiele: Online-Shops, soziale Netzwerke...
+
+  \item[Dokumentationen:] Schriftliche Anleitungen und Beschreibungen, zur Anwendung und Funktionsweise von Software.
+
+  \item[Server und Client:] Ein Server bietet Dienste an, die ein Client nutzt.
+
+  \item[(Boilerplate-)Code:] Code ist eine Date, gefüllt mit Anweisungen für den Computer. Boilerplate-Code sind standardisierte und wiederkehrende Codeabschnitte.
+
+  \item[Typisierung:] Das Festlegen von Typen in Programmiersprachen. Zum Beispiel: Zahl, Zeichenkette oder Objekt.
+
+  \item[Klassen und Objekte:] Ein Objekt ist eine Instanz einer Klasse. Eine Klassen ist eine Blaupause, die Objekte erzeugt.
+
+  \item[Support:] Wenn eine Software weiterentwickelt wird und nicht mehr mit älteren Versionen kompatibel ist, wird der Support dieser eingestellt.
+
+  \item[(Projekt-)Struktur:] Die Art und Weise, wie ein Projekt organisiert und aufgebaut ist.
+
+  \item[Komponenten:] Einzelne Teile einer Anwendung, die in sich abgeschlossen sind. Sind modular, da sie unabhängig voneinander entwickelt werden können.
+
+  \item[Quelltext (Browser):] Der einsehbare Code einer Webseite.
+
+  \item[Routen:] Die Pfade oder URLs, die definieren, welche Daten oder Seiten bei Aufruf im Browser angezeigt werden.
+
+\end{description}
+
+\newpage
+
+\section*{\centering Eigenständigkeitserklärung}
+
+\vspace{1cm}
+
+\noindent
+Hiermit bestätige ich,
+dass ich die vorliegende Arbeit selbständig verfasst und keine anderen als die angegebenen Hilfsmittel benutzt habe.
+Die Stellen der Arbeit, die dem Wortlaut oder dem Sinn nach anderen Werken (dazu zählen auch Internetquellen) entnommen sind,
+wurden unter Angabe der Quelle kenntlich gemacht.
+
+\vspace{3cm}
+
+\noindent
+\makebox[5cm][c]{Fulda, \today} \hfill \makebox[5cm][c]{} \\
+\makebox[5cm]{\hrulefill} \hfill \makebox[5cm]{\hrulefill} \\
+\makebox[5cm][c]{\textit{Ort, Datum}} \hfill \makebox[5cm][c]{\textit{Unterschrift}}
+
+\newpage
+
+\printbibliography
+
+\newpage
+
+
 \section{Anhang}
 \label{sec:anhang}
 \subsection{Implementierung}
@@ -1257,8 +1315,5 @@ number[]
   "isCorrect": boolean // Ob die Antwort richtig war
 }
 \end{lstlisting}
-
-\newpage
-\printbibliography
 
 \end{document}
