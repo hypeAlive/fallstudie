@@ -161,7 +161,7 @@ Zusätzlich wird die Zusammenarbeit der wichtigsten Komponenten einer \ac{WebApp
 \subsection{Überblick über moderne Webtechnologien}
 \label{sec:moderne-webtechnologien}
 
-Um eine \ac{WebApp} oder Website zu verstehen oder entwickeln zu können, ist es wichtig, die Struktur zu kennen.
+Um eine \ac{WebApp} oder Website entwickeln zu können, ist es wichtig, die Struktur zu kennen.
 Eine wesentliche Unterscheidung ist dabei die zwischen Frontend und Backend.
 
 Das Frontend bezeichnet hierbei den sichtbaren Teil einer \ac{WebApp}, den der Nutzer direkt erleben kann. \cite{CMSRev}
@@ -657,10 +657,12 @@ und es liegt eher an den individuellen Anforderungen und Präferenzen des Entwic
 
 \section{Schlussfolgerung und Ausblick}
 
-In dieser Fallstudie wurde ein umfassender Überblick über moderne Webtechnologien gegeben
-und deren Eignung in Bezug auf die GLS Quiz App analysiert.
+In dieser Fallstudie wurde ein Einblick in moderne Webtechnologien gegeben
+und die Eignung in Bezug auf der GLS Quiz App analysiert.
 Die Untersuchung umfasste sowohl drei Frontend- als auch drei Backend-Frameworks,
-wobei die Kriterien Lernkurve, Struktur, Integration von Karten und Leichtgewichtigkeit im Vordergrund standen.
+wobei die Kriterien Lernkurve, Leichtgewichtigkeit,
+Verfügbarkeit an Erweiterungen (insbesondere die Integration von Karten) sowie Zukunftssicherheit,
+einschließlich Struktur und Historie, im Vordergrund standen.
 Es wurden grundlegende Begriffe und Konzepte zur Zusammenarbeit vorgestellt, wie \ac{SPA}s, \ac{REST}-\ac{API}s und WebSockets.
 
 Die Nutzwertanalyse zeigte, dass Vue und React im Frontend-Bereich die besten Ergebnisse erzielten,
@@ -669,18 +671,18 @@ Im Backend-Bereich überzeugten Express und Spring durch ihre einfachere Lernkur
 während Django ein Mittelmaß aller Kriterien darstellte.
 
 Die Testimplementierung bestätigte diese Ergebnisse und zeigte,
-dass die Wahl der Kombination von Frontend- und Backend-Frameworks nicht entscheidend für den Erfolg der Implementierung ist.
-Vielmehr hängt der Erfolg von den spezifischen Anforderungen und Präferenzen des Entwicklers ab.
-Zusätzlich wurde deutlich, dass generell jede Wahl möglich ist,
-aber die Vorteile und Nachteile der jeweiligen Technologie dennoch große Auswirkungen
-auf die Entwicklung und das Ergebnis haben können.
+dass die \textbf{Wahl der Kombination} aus Front- und Backend-Frameworks nicht entscheidend für den Erfolg der Implementierung ist.
+Vielmehr hängt der Erfolg davon ab,
+wie gut die einzelnen Frameworks unabhängig voneinander den spezifischen Anforderungen und Präferenzen des Entwicklers gerecht werden.
 
 Aus den Ergebnissen der Fallstudie lässt sich ableiten,
-dass Vue und Express die beste Kombination für die Entwicklung der GLS Quiz App darstellen.
-Diese Kombination bietet eine gute Balance zwischen Einfachheit, Flexibilität und Leistungsfähigkeit.
+dass Vue und Express die besten Frameworks für die Entwicklung der GLS Quiz App sind.
+Auch mit Blick auf die Historie zeigt sich, dass Vue kürzlich eine bedeutende Weiterentwicklung durchlaufen hat,
+wodurch eine Neuprogrammierung in naher Zukunft eher unwahrscheinlich ist.
 Eine Option für das Frontend wäre auch React gewesen,
 da React eine größere Community hat und somit mehr Ressourcen und Unterstützung bietet.
-Da die GLS Quiz App jedoch einen relativ geringen Funktionsumfang hat, wiegt dieser Punkt weniger schwer.
+Da die GLS Quiz App jedoch einen relativ geringen Funktionsumfang hat und das Hauptaugenmerk auf der Karten Integration liegt,
+wiegt dieser Punkt weniger schwer.
 Bezüglich des Backends punktet Express vor allem durch den Fakt,
 dass es auf Node.js basiert und somit \ac{JS} sowohl im Frontend als auch im Backend verwendet werden kann.
 
